@@ -1,0 +1,26 @@
+P:\SPARDOX\ACADEMICO\UADE Materias\IOO\ProyectoBase\Game\bin\Debug\Engine.dll
+P:\SPARDOX\ACADEMICO\UADE Materias\IOO\ProyectoBase\Game\bin\Debug\ship.png
+P:\SPARDOX\ACADEMICO\UADE Materias\IOO\ProyectoBase\Game\bin\Debug\Game.exe
+P:\SPARDOX\ACADEMICO\UADE Materias\IOO\ProyectoBase\Game\bin\Debug\Game.pdb
+P:\SPARDOX\ACADEMICO\UADE Materias\IOO\ProyectoBase\Game\obj\Debug\Game.csproj.AssemblyReference.cache
+P:\SPARDOX\ACADEMICO\UADE Materias\IOO\ProyectoBase\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+P:\SPARDOX\ACADEMICO\UADE Materias\IOO\ProyectoBase\Game\obj\Debug\Game.exe
+P:\SPARDOX\ACADEMICO\UADE Materias\IOO\ProyectoBase\Game\obj\Debug\Game.pdb
+C:\Users\alu703.LABORATORIOS\Downloads\ProyectoBase\Game\bin\Debug\Engine.dll
+C:\Users\alu703.LABORATORIOS\Downloads\ProyectoBase\Game\bin\Debug\ship.png
+C:\Users\alu703.LABORATORIOS\Downloads\ProyectoBase\Game\bin\Debug\Game.exe
+C:\Users\alu703.LABORATORIOS\Downloads\ProyectoBase\Game\bin\Debug\Game.pdb
+C:\Users\alu703.LABORATORIOS\Downloads\ProyectoBase\Game\obj\Debug\Game.csprojAssemblyReference.cache
+C:\Users\alu703.LABORATORIOS\Downloads\ProyectoBase\Game\obj\Debug\Game.exe
+C:\Users\alu703.LABORATORIOS\Downloads\ProyectoBase\Game\obj\Debug\Game.pdb
+C:\Users\alu703.LABORATORIOS\Downloads\ProyectoBase\Game\bin\Debug\personaje.png
+C:\Users\alu703.LABORATORIOS\Downloads\ProyectoBase\Game\bin\Debug\background.png
+C:\Users\alu703.LABORATORIOS\Downloads\ProyectoBase-20220322T215043Z-001\ProyectoBase\Game\bin\Debug\background.png
+C:\Users\alu703.LABORATORIOS\Downloads\ProyectoBase-20220322T215043Z-001\ProyectoBase\Game\bin\Debug\Engine.dll
+C:\Users\alu703.LABORATORIOS\Downloads\ProyectoBase-20220322T215043Z-001\ProyectoBase\Game\bin\Debug\personaje.png
+C:\Users\alu703.LABORATORIOS\Downloads\ProyectoBase-20220322T215043Z-001\ProyectoBase\Game\bin\Debug\ship.png
+C:\Users\alu703.LABORATORIOS\Downloads\ProyectoBase-20220322T215043Z-001\ProyectoBase\Game\bin\Debug\Game.exe
+C:\Users\alu703.LABORATORIOS\Downloads\ProyectoBase-20220322T215043Z-001\ProyectoBase\Game\bin\Debug\Game.pdb
+C:\Users\alu703.LABORATORIOS\Downloads\ProyectoBase-20220322T215043Z-001\ProyectoBase\Game\obj\Debug\Game.csprojAssemblyReference.cache
+C:\Users\alu703.LABORATORIOS\Downloads\ProyectoBase-20220322T215043Z-001\ProyectoBase\Game\obj\Debug\Game.exe
+C:\Users\alu703.LABORATORIOS\Downloads\ProyectoBase-20220322T215043Z-001\ProyectoBase\Game\obj\Debug\Game.pdb
