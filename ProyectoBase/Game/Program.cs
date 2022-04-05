@@ -5,29 +5,28 @@ namespace Game
 {
     public class Program
     {
-        public static float deltaTime;
-        public static DateTime startTime;
-        public static float lastFrameTime;
-        public static int movX = 0;
-        public static int movY = 0;
+        private static float deltaTime;
+        private static DateTime startTime;
+        private static float lastFrameTime;        
+        private static Player _player1 = new Player();
 
         public static void Update()
         {
             if (Engine.GetKey(Keys.W))
             {
-                movY--;
+               // movY--;
             }
             if (Engine.GetKey(Keys.D))
             {
-                movX++;
+                //movX++;
             }
             if (Engine.GetKey(Keys.S))
             {
-                movY++;
+                //movY++;
             }
             if (Engine.GetKey(Keys.A))
             {
-                movX--;
+                //movX--;
             }
         }
         static void Main(string[] args)
@@ -37,15 +36,25 @@ namespace Game
 
             while(true)
             {
-                Engine.Clear();
+                CalcularDeltaTime();               
                 Update();
-                Engine.Draw("background.png", 0, 0, 1f, 1f);
-                Engine.Draw("personaje.png",movX,movY,0.05f,0.05f);
+                Draw();
                 Engine.Show();
-                var currentTime = (float)(DateTime.Now - startTime).TotalSeconds;
-                deltaTime = currentTime - lastFrameTime;
-                lastFrameTime = currentTime;               
             }
+        }
+
+        private static void CalcularDeltaTime()
+        {
+            var currentTime = (float)(DateTime.Now - startTime).TotalSeconds;
+            deltaTime = currentTime - lastFrameTime;
+            lastFrameTime = currentTime;
+        }
+
+        private static void Draw()
+        {
+            Engine.Clear();
+            Engine.Draw("Textures/Background/background.png", 0, 0, 1f, 1f);
+            _player1.Draw();
         }
     }
 }
