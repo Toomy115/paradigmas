@@ -33,10 +33,13 @@ namespace Game
         {
             startTime = DateTime.Now;
             Engine.Initialize();
-
+                //el profe dijo que por ahora la musica de fondo va en program, la trampa de este ejercicio es hacer que la musica vuelva
+                //a  funcionar despues de que se reproduce otro sonido. Mientras tengamos solo un sonido simplemente usemos lo que puse aca.
+                //SoundPlayer musicPlayer = new SoundPlayer("BGM.wav");
+                //musicPlayer.PlayLooping();
             while(true)
             {
-                CalcularDeltaTime();               
+                CalcularDeltaTime();
                 Update();
                 Draw();
                 Engine.Show();
