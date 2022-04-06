@@ -9,25 +9,21 @@ namespace Game
         private static DateTime startTime;
         private static float lastFrameTime;        
         private static Player _player1 = new Player();
+        private static ControlManager controlManager = new ControlManager();
 
+        public Player ObtenerPlayer
+        {
+            get { return _player1; }
+        }
+
+        public static float GetDeltaTime
+        {
+            get { return deltaTime; }
+        }
         public static void Update()
         {
-            if (Engine.GetKey(Keys.W))
-            {
-               // movY--;
-            }
-            if (Engine.GetKey(Keys.D))
-            {
-                //movX++;
-            }
-            if (Engine.GetKey(Keys.S))
-            {
-                //movY++;
-            }
-            if (Engine.GetKey(Keys.A))
-            {
-                //movX--;
-            }
+            controlManager.CheckInput();
+            _player1.Update();
         }
         static void Main(string[] args)
         {
@@ -43,6 +39,10 @@ namespace Game
             }
         }
 
+        public static Player ObtenerJugador()
+        {
+            return _player1;
+        }
         private static void CalcularDeltaTime()
         {
             var currentTime = (float)(DateTime.Now - startTime).TotalSeconds;
