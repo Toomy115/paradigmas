@@ -13,13 +13,13 @@ namespace Game
         private float _speed = 500f;
         private int _damage;
         private int _numColor;
-        private float _timeToDestroy = 70;
-        private float _scaleX = .025f;
-        private float _scaleY = .025f;
+        private float _timeToDestroy = 100;
+        private float _scaleX = 2f;
+        private float _scaleY = 2f;
         private int numInList;
 
         private string _texturePath = "Textures/Objects/";
-        private string _textureFile = "bullet.png";
+        private string _textureFile = "NewBullet.png";
         private string _texture;
 
         public float TimeOfLife

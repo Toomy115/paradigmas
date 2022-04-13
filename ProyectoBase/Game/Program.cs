@@ -7,9 +7,9 @@ namespace Game
     {
         private static float deltaTime;
         private static DateTime startTime;
-        private static float lastFrameTime;        
-        private static Player _player1 = new Player();
-        private static ControlManager controlManager = new ControlManager();
+        private static float lastFrameTime;
+        private static Player _player1;
+        private static ControlManager controlManager;
 
         public Player ObtenerPlayer
         {
@@ -29,13 +29,16 @@ namespace Game
         {
             startTime = DateTime.Now;
             Engine.Initialize();
+            MusicController musicController = new MusicController();
+           
+            _player1 = new Player();
+            controlManager = new ControlManager();
 
-            while(true)
+            while (true)
             {
                 CalcularDeltaTime();               
                 Update();
                 Draw();
-                Engine.Show();
             }
         }
 
@@ -55,6 +58,8 @@ namespace Game
             Engine.Clear();
             Engine.Draw("Textures/Background/background.png", 0, 0, 1f, 1f);
             _player1.Draw();
+
+            Engine.Show();
         }
     }
 }
