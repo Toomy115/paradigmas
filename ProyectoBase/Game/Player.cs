@@ -15,12 +15,12 @@ namespace Game
         private float _movY = 0;
         private float _scaleX = 2f;
         private float _scaleY = 2f;
-        private string _texture;
+        //private string _texture;
         private float _shootPointX;
         private float _shootPointY;
         private float _speed = 100;
-        private string _texturePath = "Textures/Player/";
-        private string _textureFile = "Idle_01.png";
+       // private string _texturePath = "Textures/Player/";
+        //private string _textureFile = "Idle_01.png";
         private List <Bullet> bullets = new List<Bullet>();
 
         private Animador idle;

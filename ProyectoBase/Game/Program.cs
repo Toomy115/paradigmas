@@ -10,6 +10,9 @@ namespace Game
         private static float lastFrameTime;
         private static Player _player1;
         private static ControlManager controlManager;
+        private static EnemyManager enemyManager;
+        private static List<SpawnController> spawns;
+
 
         public Player ObtenerPlayer
         {
@@ -20,18 +23,25 @@ namespace Game
         {
             get { return deltaTime; }
         }
+
+        public static List<SpawnController> GetSpawnList
+        {
+            get { return spawns; }
+        }
         public static void Update()
         {
             controlManager.CheckInput();
             _player1.Update();
+            enemyManager.Update();
         }
         static void Main(string[] args)
         {
+            enemyManager = EnemyManager.Instance;
             startTime = DateTime.Now;
             Engine.Initialize();
             MusicController musicController = new MusicController();
-           
-            _player1 = new Player();
+            GenerarSpawnPoints();
+             _player1 = new Player();
             controlManager = new ControlManager();
 
             while (true)
@@ -53,12 +63,26 @@ namespace Game
             lastFrameTime = currentTime;
         }
 
+        private static void GenerarSpawnPoints()
+        {
+            spawns = new List<SpawnController>();
+
+            var newSpawn = new SpawnController(650, 200, 1);
+            spawns.Add(newSpawn);
+
+            newSpawn = new SpawnController(500, 350, 2);
+            spawns.Add(newSpawn);
+
+            newSpawn = new SpawnController(600, 450, 3);
+            spawns.Add(newSpawn);
+        }
+
         private static void Draw()
         {
             Engine.Clear();
             Engine.Draw("Textures/Background/background.png", 0, 0, 1f, 1f);
             _player1.Draw();
-
+            enemyManager.Draw();
             Engine.Show();
         }
     }

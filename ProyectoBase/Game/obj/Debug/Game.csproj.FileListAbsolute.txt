@@ -26,8 +26,6 @@ C:\Users\alu703.LABORATORIOS\Downloads\ProyectoBase-20220329T215626Z-001\Proyect
 C:\Users\alu703.LABORATORIOS\Downloads\ProyectoBase-20220329T215626Z-001\ProyectoBase\Game\bin\Debug\Textures\Player\ship.png
 C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Engine.dll
 C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Background\background.png
-C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\personaje.png
-C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\ship.png
 C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Game.exe
 C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Game.pdb
 C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\obj\Debug\Game.csprojAssemblyReference.cache
@@ -46,3 +44,13 @@ C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\D
 C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\WalkAnimation\Walk_02.png
 C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\WalkAnimation\Walk_03.png
 C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\WalkAnimation\Walk_04.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\Goo_Shoot.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\BlueAlien\Alien_1.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\BlueAlien\Alien_2.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\BlueAlien\Alien_3.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\RedAlien\Alien_1.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\RedAlien\Alien_2.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\RedAlien\Alien_3.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\YellowAlien\Alien_1.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\YellowAlien\Alien_2.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\YellowAlien\Alien_3.png
