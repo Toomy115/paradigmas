@@ -36,13 +36,17 @@ namespace Game
         }
         static void Main(string[] args)
         {
+            Engine.Initialize();
+
             enemyManager = EnemyManager.Instance;
             startTime = DateTime.Now;
-            Engine.Initialize();
+           
             MusicController musicController = new MusicController();
             GenerarSpawnPoints();
              _player1 = new Player();
             controlManager = new ControlManager();
+
+            _player1.OnListChange += (List<Bullet> bullets) => enemyManager.bulletsList = bullets; 
 
             while (true)
             {
@@ -51,6 +55,8 @@ namespace Game
                 Draw();
             }
         }
+
+
 
         public static Player ObtenerJugador()
         {
@@ -67,13 +73,13 @@ namespace Game
         {
             spawns = new List<SpawnController>();
 
-            var newSpawn = new SpawnController(650, 200, 1);
+            var newSpawn = new SpawnController(650, 150, 1);
             spawns.Add(newSpawn);
 
-            newSpawn = new SpawnController(500, 350, 2);
+            newSpawn = new SpawnController(500, 300, 2);
             spawns.Add(newSpawn);
 
-            newSpawn = new SpawnController(600, 450, 3);
+            newSpawn = new SpawnController(550, 450, 3);
             spawns.Add(newSpawn);
         }
 

@@ -39,6 +39,7 @@
   <ItemGroup>
     <Compile Include="Animator.cs" />
     <Compile Include="Bullet.cs" />
+    <Compile Include="Collider.cs" />
     <Compile Include="ControlManager.cs" />
     <Compile Include="EnemyController.cs" />
     <Compile Include="EnemyManager.cs" />
@@ -48,6 +49,7 @@
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="SpawnController.cs" />
+    <Compile Include="Vector2.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Engine.dll">
@@ -123,6 +125,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Textures\Player\WalkAnimation\Walk_04.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Titles\Game_Over.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Titles\Level_Complete.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Titles\Main_Title.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

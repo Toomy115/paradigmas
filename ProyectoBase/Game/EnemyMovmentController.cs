@@ -10,8 +10,9 @@ namespace Game
     {
         private int _enemyType;
         private EnemyController _enemy;
-        private float _initialPosX;
-        private float _initialPosY;
+        private Vector2 _initialPos = new Vector2();
+        //private float _initialPosX;
+        //private float _initialPosY;
         private float _maxRangeY = 100;
         private float _minRangeY = 500;
         private float _maxRangeX = 700;
@@ -23,8 +24,8 @@ namespace Game
         {
             _enemyType = type;
             _enemy = enemyReference;
-            _initialPosX = enemyReference.GetInitialPosX;
-            _initialPosY = enemyReference.GetInitialPosY;
+            _initialPos.X = enemyReference.GetInitialPosition.X;
+            _initialPos.Y = enemyReference.GetInitialPosition.Y;      
         }
 
         public void Update()
@@ -58,9 +59,12 @@ namespace Game
             }
 
             _enemy.ChangePosX = _direccion;
-
         }
         private void RedMovment()
+        {
+            
+        }
+        private void YellowMovment()
         {
             //SE MUEVE ARRIBA Y ABAJO 
             if (_enemy.ChangePosY <= _maxRangeY)
@@ -71,12 +75,7 @@ namespace Game
             {
                 _direccion = -1;
             }
-
             _enemy.ChangePosY = _direccion;
-        }
-        private void YellowMovment()
-        {
-            //Torreta
         }
     }
 }

@@ -8,19 +8,19 @@ namespace Game
 {
     public class Player
     {
+        public event Action<List<Bullet>> OnListChange;
+
         private int _lifeStack = 3;
         private float _health = 100;
-        
-        private float _movX = 0;
-        private float _movY = 0;
+
+        private Vector2 _position = new Vector2();
+
         private float _scaleX = 2f;
         private float _scaleY = 2f;
         //private string _texture;
-        private float _shootPointX;
-        private float _shootPointY;
+        private Vector2 _shootPoint = new Vector2();
+
         private float _speed = 100;
-       // private string _texturePath = "Textures/Player/";
-        //private string _textureFile = "Idle_01.png";
         private List <Bullet> bullets = new List<Bullet>();
 
         private Animador idle;
@@ -38,16 +38,16 @@ namespace Game
 
         public float MoveX
         {
-            get { return _movX; }
+            get { return _position.X; }
 
-            set { _movX = value; }
+            set { _position.X = value; }
         }
 
         public float MoveY
         {
-            get { return _movY; }
+            get { return _position.Y; }
 
-            set { _movY = value; }
+            set { _position.Y = value; }
         }
 
         public float GetSpeed
@@ -88,7 +88,7 @@ namespace Game
 
         public void Draw()
         {
-            Engine.Draw(currentAnimation.CurrentTexture, _movX, _movY, _scaleX, _scaleY);
+            Engine.Draw(currentAnimation.CurrentTexture, _position.X, _position.Y, _scaleX, _scaleY);
         
             for (int i = 0; i < bullets.Count; i++)
             {
@@ -98,17 +98,17 @@ namespace Game
 
         public void Update()
         {
-
-
             for (int i = 0; i < bullets.Count; i++)
             {
                 bullets[i].Update();
+                EnemyManager.Instance.GetBullet(bullets[i]);
+                //if (true....)
                 if(bullets[i].TimeOfLife <= 0)
                 {
                     bullets.RemoveAt(i);
+                   OnListChange.Invoke(bullets);
                 }
             }
-
             currentAnimation.Update();
         }
         private void Kill()
@@ -123,15 +123,14 @@ namespace Game
         public void Shoot()
         {
             SetShootPosition();
-   
-            Bullet bullet = new Bullet(_shootPointX, _shootPointY, 10, 0,bullets.Count());
+            Bullet bullet = new Bullet(_shootPoint, 10, 0,bullets.Count());
             bullets.Add(bullet);
-
+            OnListChange.Invoke(bullets);
         }
         private void SetShootPosition()
         {
-            _shootPointX = _movX + 122;
-            _shootPointY = _movY + 64;
+            _shootPoint.X = _position.X + 122;
+            _shootPoint.Y = _position.Y + 64;
         }
        
         private void CreateAnimations()

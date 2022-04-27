@@ -54,3 +54,6 @@ C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\D
 C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\YellowAlien\Alien_1.png
 C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\YellowAlien\Alien_2.png
 C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\YellowAlien\Alien_3.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Titles\Game_Over.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Titles\Level_Complete.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Titles\Main_Title.png

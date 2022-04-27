@@ -10,20 +10,19 @@ namespace Game
     {
         private float _health = 100;
 
-        private float _movX = 0;
-        private float _movY = 0;
-        private float _initialPosX = 0;
-        private float _initialPosY = 0;
+        private Vector2 _position = new Vector2();
+        private Vector2 _initialPosition = new Vector2();
         private float _scaleX = 2f;
         private float _scaleY = 2f;
+        private Vector2 _size = new Vector2(142,86);
         private string _texture;
-        private float _shootPointX;
-        private float _shootPointY;
+        private Vector2 _shootPoint = new Vector2();
         private float _speed = 100;
         private string _texturePath = "Textures/Enemies/";       
         private int _enemyType;
         private List<Bullet> bullets = new List<Bullet>();
         private EnemyMovmentController movmentController;
+        private Collider collider;
 
         private Animador alien;
         //private Animador currentAnimation;
@@ -31,47 +30,55 @@ namespace Game
         public EnemyController(int type, float posX, float posY)
         {
             _enemyType = type;
-            _movX = posX;
-            _movY = posY;
-            _initialPosX = posX;
-            _initialPosY = posY;
+            _position = new Vector2(posX, posY);
+
+            _initialPosition = new Vector2(posX, posY);
+
             Console.WriteLine("enemy tipe" + type);
             CreateAnimations();
             movmentController = new EnemyMovmentController(type, this);
+            collider = new Collider(_size,_position);
         }
 
-        public float GetInitialPosX
+        public Vector2 GetSize
         {
-            get { return _initialPosX; }
+            get { return _size; }
         }
-        public float GetInitialPosY
+        public Vector2 GetPosition
         {
-            get { return _initialPosY; }
+            get { return _position; }
+        }
+        public Vector2 GetInitialPosition
+        {
+            get { return _initialPosition; }
         }
         public float ChangePosX
         {
             set
-            {
-                _movX += value * _speed * Program.GetDeltaTime;
-                
+            {   
+                _position.X += value * _speed * Program.GetDeltaTime;  
             }
             get
             {
-                return _movX;
+                return _position.X;
             }
         }
         public float ChangePosY
         {
             set
             {
-                _movY += value * _speed * Program.GetDeltaTime;
+                _position.Y += value * _speed * Program.GetDeltaTime;
             }
             get
             {
-                return _movY;
+                return _position.Y;
             }
         }
-
+        
+        public Collider GetCollider
+        {
+            get { return collider; }
+        }
         public void Update()
         {
             for (int i = 0; i < bullets.Count; i++)
@@ -85,11 +92,12 @@ namespace Game
 
             alien.Update();
             movmentController.Update();
-            
+            collider.UpdatePosition(_position);
         }
+
         public void Draw()
         {
-            Engine.Draw(alien.CurrentTexture, _movX, _movY, _scaleX, _scaleY);
+            Engine.Draw(alien.CurrentTexture, _position.X, _position.Y, _scaleX, _scaleY);
 
             for (int i = 0; i < bullets.Count; i++)
             {
@@ -100,15 +108,15 @@ namespace Game
         {
             SetShootPosition();
 
-            Bullet bullet = new Bullet(_shootPointX, _shootPointY, 10, 0, bullets.Count());
+            Bullet bullet = new Bullet(_shootPoint, 10, 0, bullets.Count());
             bullets.Add(bullet);
 
         }
 
         private void SetShootPosition()
         {
-            _shootPointX = _movX - 122;
-            _shootPointY = _movY + 64;
+            _shootPoint.X = _position.X - 122;
+            _shootPoint.Y = _position.Y + 64;
         }
 
         private void CreateAnimations()
