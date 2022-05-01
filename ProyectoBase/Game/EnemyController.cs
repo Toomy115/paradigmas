@@ -14,30 +14,39 @@ namespace Game
         private Vector2 _initialPosition = new Vector2();
         private float _scaleX = 2f;
         private float _scaleY = 2f;
-        private Vector2 _size = new Vector2(142,86);
+        private Vector2 _size = new Vector2(86,124);
         private string _texture;
         private Vector2 _shootPoint = new Vector2();
         private float _speed = 100;
         private string _texturePath = "Textures/Enemies/";       
         private int _enemyType;
-        private List<Bullet> bullets = new List<Bullet>();
+        public List<Bullet> bullets = new List<Bullet>();
         private EnemyMovmentController movmentController;
         private Collider collider;
+        private bool isEnabled;
+        private float currentTimeShoot=0;
+        private float timeToShoot;
+        private Player _player;
+        private int _spawnNum;
+
+
 
         private Animador alien;
         //private Animador currentAnimation;
 
-        public EnemyController(int type, float posX, float posY)
+        public EnemyController(int type, float posX, float posY,ref Player player, int spawnNum)
         {
             _enemyType = type;
             _position = new Vector2(posX, posY);
-
+            Random random = new Random();
+            timeToShoot = random.Next(200, 600);
             _initialPosition = new Vector2(posX, posY);
-
+            _player = player;
             Console.WriteLine("enemy tipe" + type);
             CreateAnimations();
             movmentController = new EnemyMovmentController(type, this);
             collider = new Collider(_size,_position);
+            _spawnNum = spawnNum;
         }
 
         public Vector2 GetSize
@@ -51,6 +60,10 @@ namespace Game
         public Vector2 GetInitialPosition
         {
             get { return _initialPosition; }
+        }
+        public int GetSpawnNum
+        {
+            get { return _spawnNum; }
         }
         public float ChangePosX
         {
@@ -81,10 +94,20 @@ namespace Game
         }
         public void Update()
         {
+            if(currentTimeShoot >= timeToShoot)
+            {
+                Shoot();
+            }
+            else
+            {
+                currentTimeShoot ++;                   
+            }
             for (int i = 0; i < bullets.Count; i++)
             {
                 bullets[i].Update();
-                if (bullets[i].TimeOfLife <= 0)
+                var bulletActual = bullets[i];
+                _player.GetBullet(ref bulletActual);
+                if (bullets[i].TimeOfLife <= 0 || bulletActual.isEnabled == false)
                 {
                     bullets.RemoveAt(i);
                 }
@@ -97,7 +120,8 @@ namespace Game
 
         public void Draw()
         {
-            Engine.Draw(alien.CurrentTexture, _position.X, _position.Y, _scaleX, _scaleY);
+            
+            Engine.Draw(alien.CurrentTexture, _position.X, _position.Y, _scaleX, _scaleY, 0, 30, 62);
 
             for (int i = 0; i < bullets.Count; i++)
             {
@@ -107,16 +131,15 @@ namespace Game
         public void Shoot()
         {
             SetShootPosition();
-
-            Bullet bullet = new Bullet(_shootPoint, 10, 0, bullets.Count());
+            Bullet bullet = new Bullet(_shootPoint, 10, 0, bullets.Count(),false);
             bullets.Add(bullet);
-
+            currentTimeShoot = 0;
         }
 
         private void SetShootPosition()
         {
-            _shootPoint.X = _position.X - 122;
-            _shootPoint.Y = _position.Y + 64;
+            _shootPoint.X = _position.X - 50;
+            _shootPoint.Y = _position.Y;
         }
 
         private void CreateAnimations()
@@ -148,6 +171,12 @@ namespace Game
 
             alien = new Animador("alien", 0.2f, alienTextures, true);
         }
+
+        public void Destroy()
+        {
+            isEnabled = false;
+        }
+
     }
 }
 

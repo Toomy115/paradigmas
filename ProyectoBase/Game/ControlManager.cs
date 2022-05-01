@@ -37,23 +37,35 @@ namespace Game
             {
                 if (Engine.GetKey(Keys.W))
                 {
-                    player.MoveY = player.MoveY - player.GetSpeed * Program.GetDeltaTime;
-                    isWalking = true;
+                    if (player.MoveY >= 100)
+                    {
+                        player.MoveY = player.MoveY - player.GetSpeed * Program.GetDeltaTime;
+                        isWalking = true;
+                    }
                 }
                 if (Engine.GetKey(Keys.D))
                 {
-                    player.MoveX = player.MoveX + player.GetSpeed * Program.GetDeltaTime;
-                    isWalking = true;
+                    if (player.MoveX <= 300)
+                    {
+                        player.MoveX = player.MoveX + player.GetSpeed * Program.GetDeltaTime;
+                        isWalking = true;
+                    }
                 }
                 if (Engine.GetKey(Keys.S))
                 {
-                    player.MoveY = player.MoveY + player.GetSpeed * Program.GetDeltaTime;
-                    isWalking = true;
+                    if (player.MoveY <= 500)
+                    {
+                        player.MoveY = player.MoveY + player.GetSpeed * Program.GetDeltaTime;
+                        isWalking = true;
+                    }
                 }
                 if (Engine.GetKey(Keys.A))
                 {
-                    player.MoveX = player.MoveX - player.GetSpeed * Program.GetDeltaTime;
-                    isWalking = true;
+                    if (player.MoveX >= 0)
+                    {
+                        player.MoveX = player.MoveX - player.GetSpeed * Program.GetDeltaTime;
+                        isWalking = true;
+                    }
                 }
             }
             

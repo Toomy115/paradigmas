@@ -11,6 +11,8 @@ namespace Game
         private static Player _player1;
         private static ControlManager controlManager;
         private static EnemyManager enemyManager;
+        private static SceneManager sceneManager;
+        private static GameManager gameManager;
         private static List<SpawnController> spawns;
 
 
@@ -37,26 +39,34 @@ namespace Game
         static void Main(string[] args)
         {
             Engine.Initialize();
-
+            sceneManager = SceneManager.Instance;
             enemyManager = EnemyManager.Instance;
-            startTime = DateTime.Now;
-           
-            MusicController musicController = new MusicController();
+            gameManager = GameManager.Instance;
+            startTime = DateTime.Now;          
+            //MusicController musicController = new MusicController();
             GenerarSpawnPoints();
              _player1 = new Player();
+            enemyManager.GetPlayer(_player1);
             controlManager = new ControlManager();
-
-            _player1.OnListChange += (List<Bullet> bullets) => enemyManager.bulletsList = bullets; 
-
+            gameManager.SetPlayer(ref _player1);
+            //_player1.OnListChange += (List<Bullet> bullets) => enemyManager.bulletsList = bullets; 
             while (true)
             {
-                CalcularDeltaTime();               
-                Update();
-                Draw();
+                CalcularDeltaTime();                 
+                UpdateManagers();
+                if(sceneManager.GetCurrentScene == 1)
+                {
+                    Update();
+                    Draw();
+                }
             }
         }
 
-
+        private static void UpdateManagers()
+        {
+            sceneManager.Update();
+            gameManager.Update();
+        }
 
         public static Player ObtenerJugador()
         {

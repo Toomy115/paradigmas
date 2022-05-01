@@ -13,16 +13,19 @@ namespace Game
         //private float _movY = 0;
         private Vector2 _size = new Vector2(12, 14);
         private float _speed = 500f;
-        private int _damage;
+        private int _damage = 20;
         private int _numColor;
-        private float _timeToDestroy = 100;
+        private float _timeToDestroy = 200;
         private float _scaleX = 2f;
         private float _scaleY = 2f;
         private int numInList;
         private Collider collider;
         private string _texturePath = "Textures/Objects/";
-        private string _textureFile = "NewBullet.png";
+        private string _textureFilePlayer = "NewBullet.png";
+        private string _textureFileEnemy = "Goo_Shoot.png";
         private string _texture;
+        public bool isEnabled = true;
+        private bool playerType;
 
         public float TimeOfLife
         {
@@ -45,11 +48,21 @@ namespace Game
         {
             get { return _position; }
         }
-        public Bullet(Vector2 position, int damage, int numColor, int numList)
+        public Bullet(Vector2 position, int damage, int numColor, int numList, bool isPlayerType)
         {
             _position = position;
             numInList = numList;
-            _texture = _texturePath + _textureFile;
+            if(isPlayerType)
+            {
+                _texture = _texturePath + _textureFilePlayer;
+                playerType = true;
+            }
+            else
+            {
+                _texture = _texturePath + _textureFileEnemy;
+                playerType = false;
+            }
+            
             SetDamage = damage;
             collider = new Collider(_size,_position);
         }
@@ -69,20 +82,28 @@ namespace Game
             
         }
         private void Move()
-        {          
+        {   
+            if(playerType)
+            {
                 _position.X += _speed * Program.GetDeltaTime;
-
-                _timeToDestroy--;          
+            }
+            else
+            {
+                _position.X -= _speed * Program.GetDeltaTime;
+            }           
+            _timeToDestroy--;          
         }
 
         public void Draw()
         {
+            if(isEnabled)
             Engine.Draw(_texture, _position.X, _position.Y, _scaleX, _scaleY,0,0,0);
         }
 
-        private void Destroy()
+        public void Destroy()
         { 
-            
+            isEnabled = false;
+            collider.Activated = false;
         }
     }
 }

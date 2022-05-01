@@ -28,6 +28,11 @@ namespace Game
         {
             get { return _posY; }
         }
+
+        public int GetNumSpawn
+        {
+            get { return _numSpawn; }
+        }
         public SpawnController(float posX, float posY, int num)
         {
             _posX = posX;

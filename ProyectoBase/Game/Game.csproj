@@ -45,9 +45,11 @@
     <Compile Include="EnemyManager.cs" />
     <Compile Include="EnemyMovmentController.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="GameManager.cs" />
     <Compile Include="MusicController.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="SceneManager.cs" />
     <Compile Include="SpawnController.cs" />
     <Compile Include="Vector2.cs" />
   </ItemGroup>
@@ -67,7 +69,7 @@
     <Content Include="Textures\Enemies\BlueAlien\Alien_3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Textures\Enemies\Goo_Shoot.png">
+    <Content Include="Textures\Objects\Goo_Shoot.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Textures\Enemies\RedAlien\Alien_1.png">
