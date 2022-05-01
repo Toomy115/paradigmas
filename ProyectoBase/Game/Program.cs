@@ -7,9 +7,14 @@ namespace Game
     {
         private static float deltaTime;
         private static DateTime startTime;
-        private static float lastFrameTime;        
-        private static Player _player1 = new Player();
-        private static ControlManager controlManager = new ControlManager();
+        private static float lastFrameTime;
+        private static Player _player1;
+        private static ControlManager controlManager;
+        private static EnemyManager enemyManager;
+        private static SceneManager sceneManager;
+        private static GameManager gameManager;
+        private static List<SpawnController> spawns;
+
 
         public Player ObtenerPlayer
         {
@@ -20,23 +25,47 @@ namespace Game
         {
             get { return deltaTime; }
         }
+
+        public static List<SpawnController> GetSpawnList
+        {
+            get { return spawns; }
+        }
         public static void Update()
         {
             controlManager.CheckInput();
             _player1.Update();
+            enemyManager.Update();
         }
         static void Main(string[] args)
         {
-            startTime = DateTime.Now;
             Engine.Initialize();
-
-            while(true)
+            sceneManager = SceneManager.Instance;
+            enemyManager = EnemyManager.Instance;
+            gameManager = GameManager.Instance;
+            startTime = DateTime.Now;          
+            //MusicController musicController = new MusicController();
+            GenerarSpawnPoints();
+             _player1 = new Player();
+            enemyManager.GetPlayer(_player1);
+            controlManager = new ControlManager();
+            gameManager.SetPlayer(ref _player1);
+            //_player1.OnListChange += (List<Bullet> bullets) => enemyManager.bulletsList = bullets; 
+            while (true)
             {
-                CalcularDeltaTime();               
-                Update();
-                Draw();
-                Engine.Show();
+                CalcularDeltaTime();                 
+                UpdateManagers();
+                if(sceneManager.GetCurrentScene == 1)
+                {
+                    Update();
+                    Draw();
+                }
             }
+        }
+
+        private static void UpdateManagers()
+        {
+            sceneManager.Update();
+            gameManager.Update();
         }
 
         public static Player ObtenerJugador()
@@ -50,11 +79,27 @@ namespace Game
             lastFrameTime = currentTime;
         }
 
+        private static void GenerarSpawnPoints()
+        {
+            spawns = new List<SpawnController>();
+
+            var newSpawn = new SpawnController(650, 150, 1);
+            spawns.Add(newSpawn);
+
+            newSpawn = new SpawnController(500, 300, 2);
+            spawns.Add(newSpawn);
+
+            newSpawn = new SpawnController(550, 450, 3);
+            spawns.Add(newSpawn);
+        }
+
         private static void Draw()
         {
             Engine.Clear();
             Engine.Draw("Textures/Background/background.png", 0, 0, 1f, 1f);
             _player1.Draw();
+            enemyManager.Draw();
+            Engine.Show();
         }
     }
 }
