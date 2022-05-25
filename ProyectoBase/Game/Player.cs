@@ -6,41 +6,32 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    public class Player
+    public class Player : Actor
     {
-       // public event Action<List<Bullet>> OnListChange;
+        // public event Action<List<Bullet>> OnListChange;
 
-        private int _lifeStack = 3;
-        private float _health = 100;
-
-        private Vector2 _position = new Vector2();
-        private Vector2 _initialPosition = new Vector2(0,101);
-        private Vector2 _size = new Vector2(59.5f, 182);
-
-        private float _scaleX = 1.75f;
-        private float _scaleY = 1.75f;
-        //private string _texture;
-        private Vector2 _shootPoint = new Vector2();
-
-        private float _speed = 150;
-        public List <Bullet> bullets = new List<Bullet>();
-
-        private Collider _collider;
+        private float _health;
+        private int _lifeStack = 3;  
         private Bullet _enemyBullet;
         private int _bulletPosition;
-
         private Animador idle;
         private Animador shoot;
         private Animador walk;
         private Animador currentAnimation;
 
         public Player ()
-        {
-            //_texture =_texturePath + _textureFile;
-            _position = _initialPosition;
-           CreateAnimations();
-            _collider = new Collider(_size, _position);
-           currentAnimation = idle;
+        {          
+            _health = 100;
+            base._position = new Vector2();
+            base._initialPosition = new Vector2(0, 101);
+            base._size = new Vector2(59.5f, 182);
+            base._scale = new Vector2(1.75f, 1.75f);           
+            base._shootPoint = new Vector2();
+            base._speed = 150;
+            base._position = _initialPosition;
+            CreateAnimations();
+            base._collider = new Collider(_size, _position);
+            currentAnimation = idle;
         }
 
         public float MoveX
@@ -98,9 +89,9 @@ namespace Game
         }
 
 
-        public void Draw()
+        public override void Draw()
         {
-            Engine.Draw(currentAnimation.CurrentTexture, _position.X, _position.Y, _scaleX, _scaleY, 0, 0, 91);
+            Engine.Draw(currentAnimation.CurrentTexture, _position.X, _position.Y, _scale.X, _scale.Y, 0, 0, 91);
         
             for (int i = 0; i < bullets.Count; i++)
             {
@@ -108,7 +99,7 @@ namespace Game
             }           
         }
 
-        public void Update()
+        public override void Update()
         {
             for (int i = 0; i < bullets.Count; i++)
             {
@@ -136,7 +127,7 @@ namespace Game
             Console.WriteLine("Vida restante: " + _health);
         }
 
-        private void Kill()
+        public override void Kill()
         {
             _lifeStack--;
             if (_lifeStack == 0)

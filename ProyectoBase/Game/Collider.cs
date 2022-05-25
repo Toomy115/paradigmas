@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    class Collider
+    public class Collider
     {
         //private Vector2 _height = new Vector2();
         //private Vector2 _length = new Vector2();

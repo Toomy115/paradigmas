@@ -37,11 +37,14 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actor.cs" />
     <Compile Include="Animator.cs" />
+    <Compile Include="BlueAlien.cs" />
     <Compile Include="Bullet.cs" />
     <Compile Include="Collider.cs" />
     <Compile Include="ControlManager.cs" />
-    <Compile Include="EnemyController.cs" />
+    <Compile Include="Enemy.cs" />
+    <Compile Include="EnemyFactory.cs" />
     <Compile Include="EnemyManager.cs" />
     <Compile Include="EnemyMovmentController.cs" />
     <Compile Include="Game.cs" />
@@ -49,9 +52,11 @@
     <Compile Include="MusicController.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="RedAlien.cs" />
     <Compile Include="SceneManager.cs" />
     <Compile Include="SpawnController.cs" />
     <Compile Include="Vector2.cs" />
+    <Compile Include="YellowAlien.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Engine.dll">

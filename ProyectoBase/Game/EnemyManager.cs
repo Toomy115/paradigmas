@@ -9,7 +9,7 @@ namespace Game
     public class EnemyManager
     {
         private static readonly EnemyManager instance = new EnemyManager();
-        private List<EnemyController> enemies = new List<EnemyController>();
+        private List<Enemy> enemies = new List<Enemy>();
         private Vector2 spawnPoint = new Vector2();
         //public List<Bullet> bulletsList = new List<Bullet>();
      
@@ -33,17 +33,17 @@ namespace Game
         public void Update()
         {
             if(enemies.Count < maxEnemies)
-            {
-                
+            {               
                 Random random = new Random();
                 var spawnNum = SetSpawnPosition();
-                var enemy = new EnemyController(random.Next(1, 4), spawnPoint.X, spawnPoint.Y,ref _player, spawnNum);
+                var enemy = new Enemy(random.Next(1, 4), spawnPoint.X, spawnPoint.Y,ref _player, spawnNum);
                 enemies.Add(enemy);
             }
 
             for (int i = 0; i < enemies.Count; i++)
-            {               
+            {
                 enemies[i].Update();
+                
             }
         }
 
