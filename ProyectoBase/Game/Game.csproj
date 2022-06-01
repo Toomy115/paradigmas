@@ -41,10 +41,10 @@
     <Compile Include="Animator.cs" />
     <Compile Include="BlueAlien.cs" />
     <Compile Include="Bullet.cs" />
+    <Compile Include="BulletsPool.cs" />
     <Compile Include="Collider.cs" />
     <Compile Include="ControlManager.cs" />
     <Compile Include="Enemy.cs" />
-    <Compile Include="EnemyFactory.cs" />
     <Compile Include="EnemyManager.cs" />
     <Compile Include="EnemyMovmentController.cs" />
     <Compile Include="Game.cs" />

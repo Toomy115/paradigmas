@@ -36,8 +36,22 @@ namespace Game
             {               
                 Random random = new Random();
                 var spawnNum = SetSpawnPosition();
-                var enemy = new Enemy(random.Next(1, 4), spawnPoint.X, spawnPoint.Y,ref _player, spawnNum);
-                enemies.Add(enemy);
+                int color = random.Next(1, 4);              
+                if (color == 1)//azul
+                {
+                    var enemy = new BlueAlien(1, spawnPoint.X, spawnPoint.Y,ref _player, spawnNum);
+                    enemies.Add(enemy);
+                }
+                else if (color == 2)//red
+                {
+                    var enemy = new RedAlien(2, spawnPoint.X, spawnPoint.Y, ref _player, spawnNum);
+                    enemies.Add(enemy);
+                }
+                else//yellow
+                {
+                    var enemy = new YellowAlien(3, spawnPoint.X, spawnPoint.Y, ref _player, spawnNum);
+                    enemies.Add(enemy);
+                }                
             }
 
             for (int i = 0; i < enemies.Count; i++)

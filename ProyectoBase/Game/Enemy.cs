@@ -18,7 +18,6 @@ namespace Game
         protected int _spawnNum;
 
 
-
         private Animador alien;
         //private Animador currentAnimation;
 
@@ -76,6 +75,10 @@ namespace Game
             }
         }
         
+        protected float ChangeSpeed
+        {
+            set { base._speed = value; }
+        }
         public Collider GetCollider
         {
             get { return base._collider; }

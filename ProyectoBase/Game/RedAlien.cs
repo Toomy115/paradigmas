@@ -8,9 +8,11 @@ namespace Game
 {
     class RedAlien : Enemy
     {
+        private int _direccion = 1;
         public RedAlien(int type, float posX, float posY, ref Player player, int spawnNum) : base(type, posX, posY, ref player, spawnNum)
         {
-            base.CreateAnimations("Red");
+            base.ChangeSpeed = 80;
+            base.CreateAnimations("RedAlien");
         }
 
         public override void Update()
@@ -20,7 +22,15 @@ namespace Game
         }
         private void Movment()
         {
-            
+            if(base.ChangePosY > base._player.MoveY)
+            {
+                _direccion = -1;
+            }
+            else if(base.ChangePosY < base._player.MoveY)
+            {
+                _direccion = +1;
+            }
+            base.ChangePosY = _direccion;
         }
     }
 }

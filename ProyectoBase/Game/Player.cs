@@ -18,6 +18,7 @@ namespace Game
         private Animador shoot;
         private Animador walk;
         private Animador currentAnimation;
+        private BulletsPool<Bullet> bulletsPool = new BulletsPool<Bullet>(createBullet);
 
         public Player ()
         {          
@@ -27,7 +28,7 @@ namespace Game
             base._size = new Vector2(59.5f, 182);
             base._scale = new Vector2(1.75f, 1.75f);           
             base._shootPoint = new Vector2();
-            base._speed = 150;
+            base._speed = 200;
             base._position = _initialPosition;
             CreateAnimations();
             base._collider = new Collider(_size, _position);
@@ -159,10 +160,18 @@ namespace Game
             _health = 100;
         }
 
+        public static Bullet createBullet()
+        {
+            Bullet bullet = new Bullet(10, 0, true);
+            return bullet;
+        }
+
         public void Shoot()
         {
             SetShootPosition();
-            Bullet bullet = new Bullet(_shootPoint, 10, 0,bullets.Count(),true);
+            Bullet bullet = bulletsPool.GetEelement(); // new Bullet(_shootPoint, 10, 0,bullets.Count(),true);
+            bullet.SetPosition = _shootPoint;
+            bullet.SetNumList = bullets.Count();
             bullets.Add(bullet);
             //OnListChange.Invoke(bullets);
         }

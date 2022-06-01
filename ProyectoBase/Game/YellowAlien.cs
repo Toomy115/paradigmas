@@ -13,7 +13,8 @@ namespace Game
         private int _direccion = 1;
         public YellowAlien(int type, float posX, float posY, ref Player player, int spawnNum) : base(type, posX, posY, ref player, spawnNum)
         {
-            base.CreateAnimations("Yellow");
+            base.ChangeSpeed = 100;
+            base.CreateAnimations("YellowAlien");
         }
 
         public override void Update()

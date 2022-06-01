@@ -12,7 +12,7 @@ namespace Game
         protected Vector2 _initialPosition;
         protected Vector2 _size;
         protected Vector2 _scale;
-        protected Vector2 _shootPoint;
+        protected Vector2 _shootPoint = new Vector2();
         protected float _speed;
         public List<Bullet> bullets = new List<Bullet>();
         protected Collider _collider;

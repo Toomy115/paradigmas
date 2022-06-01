@@ -48,10 +48,20 @@ namespace Game
         {
             get { return _position; }
         }
-        public Bullet(Vector2 position, int damage, int numColor, int numList, bool isPlayerType)
+
+        public Vector2 SetPosition
         {
-            _position = position;
-            numInList = numList;
+            set { _position = value; }
+        }
+
+        public int SetNumList
+        {
+            set { numInList = value; }
+        }
+        public Bullet(int damage, int numColor, bool isPlayerType)
+        {
+            //_position = position;
+            //numInList = numList;
             if(isPlayerType)
             {
                 _texture = _texturePath + _textureFilePlayer;
@@ -104,6 +114,11 @@ namespace Game
         { 
             isEnabled = false;
             collider.Activated = false;
+        }
+
+        public void Resetme()
+        {
+            
         }
     }
 }
