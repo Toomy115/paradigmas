@@ -41,6 +41,7 @@
     <Compile Include="Animator.cs" />
     <Compile Include="BlueAlien.cs" />
     <Compile Include="Bullet.cs" />
+    <Compile Include="BulletFactory.cs" />
     <Compile Include="BulletsPool.cs" />
     <Compile Include="Collider.cs" />
     <Compile Include="ControlManager.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="RedAlien.cs" />
     <Compile Include="SceneManager.cs" />
     <Compile Include="SpawnController.cs" />
+    <Compile Include="Transform.cs" />
     <Compile Include="Vector2.cs" />
     <Compile Include="YellowAlien.cs" />
   </ItemGroup>

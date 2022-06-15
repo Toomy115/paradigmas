@@ -11,7 +11,7 @@ namespace Game
         private float _maxRangeX = 700;
         private float _minRangeX = 400;
         private int _direccion = 1;
-        public BlueAlien(int type, float posX, float posY, ref Player player, int spawnNum) :base(type,posX,posY,ref player,spawnNum)
+        public BlueAlien(int type, float posX, float posY, ref Player player, int spawnNum, BulletsPool<Bullet> enemyBulletPool) :base(type,posX,posY,ref player,spawnNum, enemyBulletPool)
         {
             base.ChangeSpeed = 100;
             base.CreateAnimations("BlueAlien");

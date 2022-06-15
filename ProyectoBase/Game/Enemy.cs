@@ -16,33 +16,35 @@ namespace Game
         protected float currentTimeShoot=0;
         protected float timeToShoot;
         protected int _spawnNum;
+        protected BulletsPool<Bullet> bulletsPool;
 
 
         private Animador alien;
         //private Animador currentAnimation;
 
-        public Enemy(int type, float posX, float posY,ref Player player, int spawnNum)
+        public Enemy(int type, float posX, float posY,ref Player player, int spawnNum,BulletsPool<Bullet> enemyBulletPool)
         {
             base._initialPosition = new Vector2(posX, posY);
-            base._position = new Vector2(posX, posY);
-            base._collider = new Collider(_size,_position);
-            base._scale = new Vector2(2, 2);
-            base._size = new Vector2(86, 124);
+            base._transform.Position = new Vector2(posX, posY);
+            base._transform.Scale = new Vector2(2, 2);
+            base._transform.Size = new Vector2(86, 124);
+            base._collider = new Collider(_transform.Size,_transform.Position);
             Random random = new Random();
             timeToShoot = random.Next(200, 600);           
             _enemyType = type;
             _player = player;
             Console.WriteLine("enemy tipe" + type);            
             _spawnNum = spawnNum;
+            bulletsPool = enemyBulletPool;
         }
 
         public Vector2 GetSize
         {
-            get { return _size; }
+            get { return _transform.Size; }
         }
         public Vector2 GetPosition
         {
-            get { return _position; }
+            get { return _transform.Position; }
         }
         public Vector2 GetInitialPosition
         {
@@ -56,22 +58,22 @@ namespace Game
         {
             set
             {   
-                _position.X += value * _speed * Program.GetDeltaTime;  
+                _transform.Position.X += value * _speed * Program.GetDeltaTime;  
             }
             get
             {
-                return _position.X;
+                return _transform.Position.X;
             }
         }
         public float ChangePosY
         {
             set
             {
-                _position.Y += value * _speed * Program.GetDeltaTime;
+                _transform.Position.Y += value * _speed * Program.GetDeltaTime;
             }
             get
             {
-                return _position.Y;
+                return _transform.Position.Y;
             }
         }
         
@@ -104,13 +106,13 @@ namespace Game
                 }
             }
             alien.Update();           
-            base._collider.UpdatePosition(_position);
+            base._collider.UpdatePosition(_transform.Position);
         }
 
         public override void Draw()
         {
             
-            Engine.Draw(alien.CurrentTexture, _position.X, _position.Y, _scale.X, _scale.Y, 0, 30, 62);
+            Engine.Draw(alien.CurrentTexture, _transform.Position.X, _transform.Position.Y, _transform.Scale.X, _transform.Scale.Y, 0, 30, 62);
 
             for (int i = 0; i < bullets.Count; i++)
             {
@@ -120,15 +122,18 @@ namespace Game
         public void Shoot()
         {
             SetShootPosition();
-            Bullet bullet = new Bullet(base._shootPoint, 10, 0, bullets.Count(),false);
+            Bullet bullet = bulletsPool.GetElement();
+            bullet.SetNumList = bullets.Count();
+            bullet.SetPosition = _shootPoint;
+            //Bullet bullet = new Bullet(base._shootPoint, 10, 0, bullets.Count(),false);
             bullets.Add(bullet);
             currentTimeShoot = 0;
         }
 
         private void SetShootPosition()
         {
-            base._shootPoint.X = _position.X - 50;
-            base._shootPoint.Y = _position.Y;
+            base._shootPoint.X = _transform.Position.X - 50;
+            base._shootPoint.Y = _transform.Position.Y;
         }
 
         protected void CreateAnimations(string color)

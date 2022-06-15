@@ -17,7 +17,7 @@ namespace Game
             _elementGenerator = elementGenerator;
         }
 
-        public T GetEelement()
+        public T GetElement()
         {
             T item;
 

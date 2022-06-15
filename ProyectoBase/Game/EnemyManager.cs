@@ -18,8 +18,8 @@ namespace Game
         //private Vector2 bulletPosition = new Vector2();
         private Bullet _bullet;
         private int _bulletPosition;
+        BulletsPool<Bullet> enemyBulletPool = new BulletsPool<Bullet>(createBullet);
 
-    
 
         public static EnemyManager Instance
         {
@@ -39,17 +39,17 @@ namespace Game
                 int color = random.Next(1, 4);              
                 if (color == 1)//azul
                 {
-                    var enemy = new BlueAlien(1, spawnPoint.X, spawnPoint.Y,ref _player, spawnNum);
+                    var enemy = new BlueAlien(1, spawnPoint.X, spawnPoint.Y,ref _player, spawnNum,enemyBulletPool);
                     enemies.Add(enemy);
                 }
                 else if (color == 2)//red
                 {
-                    var enemy = new RedAlien(2, spawnPoint.X, spawnPoint.Y, ref _player, spawnNum);
+                    var enemy = new RedAlien(2, spawnPoint.X, spawnPoint.Y, ref _player, spawnNum, enemyBulletPool);
                     enemies.Add(enemy);
                 }
                 else//yellow
                 {
-                    var enemy = new YellowAlien(3, spawnPoint.X, spawnPoint.Y, ref _player, spawnNum);
+                    var enemy = new YellowAlien(3, spawnPoint.X, spawnPoint.Y, ref _player, spawnNum, enemyBulletPool);
                     enemies.Add(enemy);
                 }                
             }
@@ -61,6 +61,11 @@ namespace Game
             }
         }
 
+        public static Bullet createBullet()
+        {
+            Bullet bullet = BulletFactory.CreateBullet(BulletFactory.EnumBullets.EnemyBullet); //new Bullet(10, 0, false);
+            return bullet;
+        }
         public void GetPlayer(Player player)
         {
             _player = player;

@@ -50,6 +50,7 @@ namespace Game
             controlManager = new ControlManager();
             gameManager.SetPlayer(ref _player1);
             //_player1.OnListChange += (List<Bullet> bullets) => enemyManager.bulletsList = bullets; 
+            
             while (true)
             {
                 CalcularDeltaTime();                 

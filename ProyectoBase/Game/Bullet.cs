@@ -8,16 +8,17 @@ namespace Game
 {
     public class Bullet
     {
-        private Vector2 _position = new Vector2();
+        private Transform _transform = new Transform();
+        //private Vector2 _position = new Vector2();
         //private float _movX = 0;
         //private float _movY = 0;
-        private Vector2 _size = new Vector2(12, 14);
+        //private Vector2 _size = new Vector2(12, 14);
         private float _speed = 500f;
         private int _damage = 20;
         private int _numColor;
         private float _timeToDestroy = 200;
-        private float _scaleX = 2f;
-        private float _scaleY = 2f;
+        //private float _scaleX = 2f;
+        //private float _scaleY = 2f;
         private int numInList;
         private Collider collider;
         private string _texturePath = "Textures/Objects/";
@@ -42,16 +43,16 @@ namespace Game
         }
         public Vector2 GetSize
         {
-            get { return _size; }
+            get { return _transform.Size; }
         }
         public Vector2 GetPosition
         {
-            get { return _position; }
+            get { return _transform.Position; }
         }
 
         public Vector2 SetPosition
         {
-            set { _position = value; }
+            set { _transform.Position = value; }
         }
 
         public int SetNumList
@@ -62,7 +63,9 @@ namespace Game
         {
             //_position = position;
             //numInList = numList;
-            if(isPlayerType)
+            _transform.Size = new Vector2(12, 14);
+            _transform.Scale = new Vector2(2f, 2f);
+            if (isPlayerType)
             {
                 _texture = _texturePath + _textureFilePlayer;
                 playerType = true;
@@ -74,7 +77,7 @@ namespace Game
             }
             
             SetDamage = damage;
-            collider = new Collider(_size,_position);
+            collider = new Collider(_transform.Size, _transform.Position);
         }
         //public Bullet(float posInicialX, float posInicialY, int damage, Texture texture, int numColor)
         //{
@@ -88,18 +91,18 @@ namespace Game
         public void Update()
         {           
             Move();
-            collider.UpdatePosition(_position);
+            collider.UpdatePosition(_transform.Position);
             
         }
         private void Move()
         {   
             if(playerType)
             {
-                _position.X += _speed * Program.GetDeltaTime;
+                _transform.Position.X += _speed * Program.GetDeltaTime;
             }
             else
             {
-                _position.X -= _speed * Program.GetDeltaTime;
+                _transform.Position.X -= _speed * Program.GetDeltaTime;
             }           
             _timeToDestroy--;          
         }
@@ -107,7 +110,7 @@ namespace Game
         public void Draw()
         {
             if(isEnabled)
-            Engine.Draw(_texture, _position.X, _position.Y, _scaleX, _scaleY,0,0,0);
+            Engine.Draw(_texture, _transform.Position.X, _transform.Position.Y, _transform.Scale.X, _transform.Scale.Y,0,0,0);
         }
 
         public void Destroy()

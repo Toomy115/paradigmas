@@ -23,30 +23,30 @@ namespace Game
         public Player ()
         {          
             _health = 100;
-            base._position = new Vector2();
+            base._transform.Position = new Vector2();
             base._initialPosition = new Vector2(0, 101);
-            base._size = new Vector2(59.5f, 182);
-            base._scale = new Vector2(1.75f, 1.75f);           
+            base._transform.Size = new Vector2(59.5f, 182);
+            base._transform.Scale = new Vector2(1.75f, 1.75f);           
             base._shootPoint = new Vector2();
             base._speed = 200;
-            base._position = _initialPosition;
+            base._transform.Position = _initialPosition;
             CreateAnimations();
-            base._collider = new Collider(_size, _position);
+            base._collider = new Collider(_transform.Size, _transform.Position);
             currentAnimation = idle;
         }
 
         public float MoveX
         {
-            get { return _position.X; }
+            get { return _transform.Position.X; }
 
-            set { _position.X = value; }
+            set { _transform.Position.X = value; }
         }
 
         public float MoveY
         {
-            get { return _position.Y; }
+            get { return _transform.Position.Y; }
 
-            set { _position.Y = value; }
+            set { _transform.Position.Y = value; }
         }
 
         public float GetSpeed
@@ -92,7 +92,7 @@ namespace Game
 
         public override void Draw()
         {
-            Engine.Draw(currentAnimation.CurrentTexture, _position.X, _position.Y, _scale.X, _scale.Y, 0, 0, 91);
+            Engine.Draw(currentAnimation.CurrentTexture, _transform.Position.X, _transform.Position.Y, _transform.Scale.X, _transform.Scale.Y, 0, 0, 91);
         
             for (int i = 0; i < bullets.Count; i++)
             {
@@ -115,7 +115,7 @@ namespace Game
                 }
             }
             currentAnimation.Update();
-            _collider.UpdatePosition(_position);
+            _collider.UpdatePosition(_transform.Position);
         }      
 
         public void GetDamage(int damage)
@@ -156,29 +156,30 @@ namespace Game
 
         private void Respawn()
         {
-            _position = _initialPosition;
+            _transform.Position = _initialPosition;
             _health = 100;
         }
 
         public static Bullet createBullet()
         {
-            Bullet bullet = new Bullet(10, 0, true);
+            Bullet bullet = BulletFactory.CreateBullet(BulletFactory.EnumBullets.PlayerBullet);
             return bullet;
         }
 
         public void Shoot()
         {
             SetShootPosition();
-            Bullet bullet = bulletsPool.GetEelement(); // new Bullet(_shootPoint, 10, 0,bullets.Count(),true);
+            Bullet bullet = bulletsPool.GetElement(); // new Bullet(_shootPoint, 10, 0,bullets.Count(),true);
             bullet.SetPosition = _shootPoint;
             bullet.SetNumList = bullets.Count();
             bullets.Add(bullet);
+           // Console.WriteLine("Bullets en pool: " + bulletsPool.);
             //OnListChange.Invoke(bullets);
         }
         private void SetShootPosition()
         {
-            _shootPoint.X = _position.X + 115;
-            _shootPoint.Y = _position.Y - 37;
+            _shootPoint.X = _transform.Position.X + 115;
+            _shootPoint.Y = _transform.Position.Y - 37;
         }
 
         public void GetBullet(ref Bullet bullet)
@@ -189,7 +190,7 @@ namespace Game
 
         private void CheckCollitions(ref Bullet bullet)
         {
-            if (_collider.IsBoxColliding(_position, _size, bullet.GetPosition, bullet.GetSize))
+            if (_collider.IsBoxColliding(_transform.Position, _transform.Size, bullet.GetPosition, bullet.GetSize))
             {
                 Console.WriteLine("Entro colisiono");
                 GetDamage(20);

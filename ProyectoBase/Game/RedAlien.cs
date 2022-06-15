@@ -9,7 +9,7 @@ namespace Game
     class RedAlien : Enemy
     {
         private int _direccion = 1;
-        public RedAlien(int type, float posX, float posY, ref Player player, int spawnNum) : base(type, posX, posY, ref player, spawnNum)
+        public RedAlien(int type, float posX, float posY, ref Player player, int spawnNum, BulletsPool<Bullet> enemyBulletPool) : base(type, posX, posY, ref player, spawnNum, enemyBulletPool)
         {
             base.ChangeSpeed = 80;
             base.CreateAnimations("RedAlien");
