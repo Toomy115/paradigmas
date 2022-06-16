@@ -9,7 +9,7 @@ namespace Game
     public class EnemyManager
     {
         private static readonly EnemyManager instance = new EnemyManager();
-        private List<EnemyController> enemies = new List<EnemyController>();
+        private List<Enemy> enemies = new List<Enemy>();
         private Vector2 spawnPoint = new Vector2();
         //public List<Bullet> bulletsList = new List<Bullet>();
      
@@ -18,8 +18,8 @@ namespace Game
         //private Vector2 bulletPosition = new Vector2();
         private Bullet _bullet;
         private int _bulletPosition;
+        BulletsPool<Bullet> enemyBulletPool = new BulletsPool<Bullet>(createBullet);
 
-    
 
         public static EnemyManager Instance
         {
@@ -33,20 +33,39 @@ namespace Game
         public void Update()
         {
             if(enemies.Count < maxEnemies)
-            {
-                
+            {               
                 Random random = new Random();
                 var spawnNum = SetSpawnPosition();
-                var enemy = new EnemyController(random.Next(1, 4), spawnPoint.X, spawnPoint.Y,ref _player, spawnNum);
-                enemies.Add(enemy);
+                int color = random.Next(1, 4);              
+                if (color == 1)//azul
+                {
+                    var enemy = new BlueAlien(1, spawnPoint.X, spawnPoint.Y,ref _player, spawnNum,enemyBulletPool);
+                    enemies.Add(enemy);
+                }
+                else if (color == 2)//red
+                {
+                    var enemy = new RedAlien(2, spawnPoint.X, spawnPoint.Y, ref _player, spawnNum, enemyBulletPool);
+                    enemies.Add(enemy);
+                }
+                else//yellow
+                {
+                    var enemy = new YellowAlien(3, spawnPoint.X, spawnPoint.Y, ref _player, spawnNum, enemyBulletPool);
+                    enemies.Add(enemy);
+                }                
             }
 
             for (int i = 0; i < enemies.Count; i++)
-            {               
+            {
                 enemies[i].Update();
+                
             }
         }
 
+        public static Bullet createBullet()
+        {
+            Bullet bullet = BulletFactory.CreateBullet(BulletFactory.EnumBullets.EnemyBullet); //new Bullet(10, 0, false);
+            return bullet;
+        }
         public void GetPlayer(Player player)
         {
             _player = player;

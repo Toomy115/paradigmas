@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace Game
 {
+    public delegate void PointsChangeEventHandler(int points);
     public class GameManager
     {
+        public event PointsChangeEventHandler OnPointsChange;
         private static readonly GameManager instance = new GameManager();
         private float _enemiesToDestroy = 10;
         private float _enemiesNextLevel = 5;
         private int _enemiesDestroyed;
+        private int _points = 0;
         private Player _player;
         public static GameManager Instance
         {
@@ -22,7 +25,12 @@ namespace Game
         }
         public int EnemiesDestroyedUpgrade
         {
-            set { _enemiesDestroyed += value; }
+            set 
+            { 
+                _enemiesDestroyed += value;
+                _points++;
+                OnPointsChange(_points);
+            }
         }
 
         public int GetEnemiesDestroyed
@@ -40,7 +48,7 @@ namespace Game
             {
                 //VICTORY
                 _enemiesToDestroy += _enemiesNextLevel;
-                _enemiesDestroyed = 0;
+                _enemiesDestroyed = 0;               
                 SceneManager.Instance.SetCurrentScene = 2;
                 _player.RestoreNextLevel();
             }

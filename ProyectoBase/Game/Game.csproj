@@ -37,21 +37,32 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actor.cs" />
     <Compile Include="Animator.cs" />
+    <Compile Include="BlueAlien.cs" />
     <Compile Include="Bullet.cs" />
+    <Compile Include="BulletFactory.cs" />
+    <Compile Include="BulletsPool.cs" />
     <Compile Include="Collider.cs" />
     <Compile Include="ControlManager.cs" />
-    <Compile Include="EnemyController.cs" />
+    <Compile Include="Enemy.cs" />
     <Compile Include="EnemyManager.cs" />
     <Compile Include="EnemyMovmentController.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="GameManager.cs" />
+    <Compile Include="HUDManager.cs" />
+    <Compile Include="LifeBarManager.cs" />
+    <Compile Include="LifeStackManager.cs" />
     <Compile Include="MusicController.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="PointsManager.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="RedAlien.cs" />
     <Compile Include="SceneManager.cs" />
     <Compile Include="SpawnController.cs" />
+    <Compile Include="Transform.cs" />
     <Compile Include="Vector2.cs" />
+    <Compile Include="YellowAlien.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Engine.dll">
@@ -67,6 +78,60 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Textures\Enemies\BlueAlien\Alien_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\HUD\Life Bar\Barra 20.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\HUD\Life Bar\Barra 40.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\HUD\Life Bar\Barra 60.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\HUD\Life Bar\Barra 80.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\HUD\Life Bar\Barra Llena.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\HUD\Life Stack\1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\HUD\Life Stack\2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\HUD\Life Stack\3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\HUD\Numbers\0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\HUD\Numbers\1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\HUD\Numbers\2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\HUD\Numbers\3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\HUD\Numbers\4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\HUD\Numbers\5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\HUD\Numbers\6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\HUD\Numbers\7.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\HUD\Numbers\8.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\HUD\Numbers\9.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Textures\Objects\Goo_Shoot.png">

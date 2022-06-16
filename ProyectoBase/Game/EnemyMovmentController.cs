@@ -9,7 +9,7 @@ namespace Game
     class EnemyMovmentController
     {
         private int _enemyType;
-        private EnemyController _enemy;
+        private Enemy _enemy;
         private Vector2 _initialPos = new Vector2();
         //private float _initialPosX;
         //private float _initialPosY;
@@ -20,7 +20,7 @@ namespace Game
         private int _direccion = 1;
 
 
-        public EnemyMovmentController(int type, EnemyController enemyReference)
+        public EnemyMovmentController(int type, Enemy enemyReference)
         {
             _enemyType = type;
             _enemy = enemyReference;

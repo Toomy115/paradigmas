@@ -13,6 +13,7 @@ namespace Game
         private static EnemyManager enemyManager;
         private static SceneManager sceneManager;
         private static GameManager gameManager;
+        private static HUDManager HUDManager;
         private static List<SpawnController> spawns;
 
 
@@ -45,11 +46,13 @@ namespace Game
             startTime = DateTime.Now;          
             //MusicController musicController = new MusicController();
             GenerarSpawnPoints();
-             _player1 = new Player();
+            _player1 = new Player();
+            HUDManager = new HUDManager(_player1,gameManager);
             enemyManager.GetPlayer(_player1);
             controlManager = new ControlManager();
             gameManager.SetPlayer(ref _player1);
             //_player1.OnListChange += (List<Bullet> bullets) => enemyManager.bulletsList = bullets; 
+            
             while (true)
             {
                 CalcularDeltaTime();                 
@@ -99,6 +102,7 @@ namespace Game
             Engine.Draw("Textures/Background/background.png", 0, 0, 1f, 1f);
             _player1.Draw();
             enemyManager.Draw();
+            HUDManager.Draw();
             Engine.Show();
         }
     }
