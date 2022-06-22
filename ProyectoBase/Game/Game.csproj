@@ -51,6 +51,10 @@
     <Compile Include="Game.cs" />
     <Compile Include="GameManager.cs" />
     <Compile Include="HUDManager.cs" />
+    <Compile Include="IColoring.cs" />
+    <Compile Include="IDamageable.cs" />
+    <Compile Include="IColorDamage.cs" />
+    <Compile Include="IWeapon.cs" />
     <Compile Include="LifeBarManager.cs" />
     <Compile Include="LifeStackManager.cs" />
     <Compile Include="MusicController.cs" />
@@ -58,10 +62,12 @@
     <Compile Include="PointsManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="RedAlien.cs" />
+    <Compile Include="Renderer.cs" />
     <Compile Include="SceneManager.cs" />
     <Compile Include="SpawnController.cs" />
     <Compile Include="Transform.cs" />
     <Compile Include="Vector2.cs" />
+    <Compile Include="Weapon.cs" />
     <Compile Include="YellowAlien.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -164,34 +170,94 @@
     <Content Include="Textures\Objects\NewBullet.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Textures\Player\Idle_01.png">
+    <Content Include="Textures\Player\Idle_01_1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Textures\Player\ShootAnimation\Shoot_01.png">
+    <Content Include="Textures\Player\Idle_01_2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Textures\Player\ShootAnimation\Shoot_02.png">
+    <Content Include="Textures\Player\Idle_01_3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Textures\Player\ShootAnimation\Shoot_03.png">
+    <Content Include="Textures\Player\ShootAnimation\Shoot_01_1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Textures\Player\ShootAnimation\Shoot_04.png">
+    <Content Include="Textures\Player\ShootAnimation\Shoot_01_2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Textures\Player\ShootAnimation\Shoot_05.png">
+    <Content Include="Textures\Player\ShootAnimation\Shoot_01_3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Textures\Player\WalkAnimation\Walk_01.png">
+    <Content Include="Textures\Player\ShootAnimation\Shoot_02_1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Textures\Player\WalkAnimation\Walk_02.png">
+    <Content Include="Textures\Player\ShootAnimation\Shoot_02_2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Textures\Player\WalkAnimation\Walk_03.png">
+    <Content Include="Textures\Player\ShootAnimation\Shoot_02_3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Textures\Player\WalkAnimation\Walk_04.png">
+    <Content Include="Textures\Player\ShootAnimation\Shoot_03_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Player\ShootAnimation\Shoot_03_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Player\ShootAnimation\Shoot_03_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Player\ShootAnimation\Shoot_04_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Player\ShootAnimation\Shoot_04_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Player\ShootAnimation\Shoot_04_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Player\ShootAnimation\Shoot_05_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Player\ShootAnimation\Shoot_05_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Player\ShootAnimation\Shoot_05_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Player\WalkAnimation\Walk_01_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Player\WalkAnimation\Walk_01_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Player\WalkAnimation\Walk_01_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Player\WalkAnimation\Walk_02_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Player\WalkAnimation\Walk_02_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Player\WalkAnimation\Walk_02_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Player\WalkAnimation\Walk_03_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Player\WalkAnimation\Walk_03_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Player\WalkAnimation\Walk_03_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Player\WalkAnimation\Walk_04_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Player\WalkAnimation\Walk_04_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Player\WalkAnimation\Walk_04_3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Textures\Titles\Game_Over.png">

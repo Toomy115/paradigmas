@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    class ControlManager
+    public delegate void WeaponChangeEventHandler(int weapon);
+    public class ControlManager
     {
+        public event WeaponChangeEventHandler OnWeaponChange;
         private float currentTimeShoot = 40;
         private float cooldownTime = 40;
         private Player player;
@@ -23,9 +25,10 @@ namespace Game
         private void Start()
         {
             player = Program.ObtenerJugador();
+            //player.weapon = new Weapon(this);
         }
 
-       
+        
         public void CheckInput()
         {
            
@@ -95,6 +98,19 @@ namespace Game
             {
                 player.SetAnimation = "idle";
             }
-        }                  
+            if (Engine.GetKey(Keys.Num1))
+            {
+                player.ChangeColor(1);
+            }
+            if (Engine.GetKey(Keys.Num2))
+            {
+                player.ChangeColor(2);
+            }
+            if (Engine.GetKey(Keys.Num3))
+            {
+                player.ChangeColor(3);
+            }
+        } 
+        
     }
 }

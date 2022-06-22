@@ -8,7 +8,7 @@ namespace Game
 {
     public delegate void HealthChangeEventHandler(float health);
     public delegate void LifeStackChangeEventHandler(int stack);
-    public class Player : Actor
+    public class Player : Actor, IColoring
     {
         // public event Action<List<Bullet>> OnListChange;
         public event HealthChangeEventHandler OnHealthChange;
@@ -17,10 +17,18 @@ namespace Game
         private int _lifeStack = 3;  
         private Bullet _enemyBullet;
         private int _bulletPosition;
-        private Animador idle;
-        private Animador shoot;
-        private Animador walk;
+        private Animador idle1;
+        private Animador shoot1;
+        private Animador walk1;
+        private Animador idle2;
+        private Animador shoot2;
+        private Animador walk2;
+        private Animador idle3;
+        private Animador shoot3;
+        private Animador walk3;
         private Animador currentAnimation;
+        private Weapon _weapon;
+        private int _currentColor;
         private BulletsPool<Bullet> bulletsPool = new BulletsPool<Bullet>(createBullet);
 
         public Player ()
@@ -33,11 +41,18 @@ namespace Game
             base._shootPoint = new Vector2();
             base._speed = 200;
             base._transform.Position = _initialPosition;
+            _currentColor = 1;
             CreateAnimations();
             base._collider = new Collider(_transform.Size, _transform.Position);
-            currentAnimation = idle;
+            currentAnimation = idle1;
+            _weapon = new Weapon();
         }
 
+        public int Color
+        {
+            get { return _currentColor; }
+            set { _currentColor = value; }
+        }
         public float MoveX
         {
             get { return _transform.Position.X; }
@@ -78,15 +93,31 @@ namespace Game
             { 
                 switch(value)
                 {
-                    case "idle": currentAnimation = idle;
+                    case "idle":
+                        if (Color == 1)
+                            currentAnimation = idle1;
+                        else if (Color == 2)
+                            currentAnimation = idle2;
+                        else
+                            currentAnimation = idle3;
                         break;
                     case "walk":
-                        currentAnimation = walk;
+                        if (Color == 1)
+                            currentAnimation = walk1;
+                        else if (Color == 2)
+                            currentAnimation = walk2;
+                        else
+                            currentAnimation = walk3;                       
                         break;
                     case "shoot":
-                        currentAnimation = shoot;
+                        if (Color == 1)
+                            currentAnimation = shoot1;
+                        else if (Color == 2)
+                            currentAnimation = shoot2;
+                        else
+                            currentAnimation = shoot3;
                         break;
-                    default: currentAnimation = idle;
+                    default: currentAnimation = idle1;
                         break;
                 }               
             }
@@ -196,34 +227,61 @@ namespace Game
         private void CheckCollitions(ref Bullet bullet)
         {
             if (_collider.IsBoxColliding(_transform.Position, _transform.Size, bullet.GetPosition, bullet.GetSize))
-            {
-                Console.WriteLine("Entro colisiono");
+            {               
                 GetDamage(20);
                 bullet.isEnabled = false;
             }
         }
+
+        public void ChangeColor(int color)
+        {
+            Color = color;
+            Console.WriteLine("Color:" + color);
+        }
         private void CreateAnimations()
         {
-            var idleTexture = new List<Texture>();
-            idleTexture.Add(Engine.GetTexture("Textures/Player/Idle_01.png"));
-            idle = new Animador("idle", 1f, idleTexture, false);
-
-            var walkTextures = new List<Texture>();
-            for (int i = 1; i <= 4; i++)
+            for (int j = 1; j <= 3; j++)
             {
-                var texture = Engine.GetTexture($"Textures/Player/WalkAnimation/Walk_0{i}.png");
-                walkTextures.Add(texture);
+                var idleTexture = new List<Texture>();
+                idleTexture.Add(Engine.GetTexture("Textures/Player/Idle_01_" + _currentColor + ".png"));
+
+
+                var walkTextures = new List<Texture>();
+                for (int i = 1; i <= 4; i++)
+                {
+                    var texture = Engine.GetTexture($"Textures/Player/WalkAnimation/Walk_0{i}_" + _currentColor + ".png");
+                    walkTextures.Add(texture);
+                }
+
+
+                var shootTextures = new List<Texture>();
+                for (int i = 1; i <= 5; i++)
+                {
+                    shootTextures.Add(Engine.GetTexture($"Textures/Player/ShootAnimation/Shoot_0{i}_" + _currentColor + ".png"));
+                }
+                _currentColor++;
+
+                switch(j)
+                {
+                    case 1:
+                        idle1 = new Animador("idle1", 1f, idleTexture, false);
+                        shoot1 = new Animador("shoot1", 0.1f, shootTextures, false);
+                        walk1 = new Animador("walk1", 0.2f, walkTextures, false);
+                        break;
+                    case 2:
+                        idle2 = new Animador("idle2", 1f, idleTexture, false);
+                        shoot2 = new Animador("shoot2", 0.1f, shootTextures, false);
+                        walk2 = new Animador("walk2", 0.2f, walkTextures, false);
+                        break;
+                    case 3:
+                        idle3 = new Animador("idle3", 1f, idleTexture, false);
+                        shoot3 = new Animador("shoot3", 0.1f, shootTextures, false);
+                        walk3 = new Animador("walk3", 0.2f, walkTextures, false);
+                        break;
+                    default:
+                        break;
+                }
             }
-
-            walk = new Animador("walk", 0.2f, walkTextures, false);
-
-            var shootTextures = new List<Texture>();
-            for (int i = 1; i <= 5; i++)
-            {
-                shootTextures.Add(Engine.GetTexture("Textures/Player/ShootAnimation/Shoot_0" + i + ".png"));
-            }
-
-            shoot = new Animador("shoot", 0.1f, shootTextures, false);
         }
     }
 

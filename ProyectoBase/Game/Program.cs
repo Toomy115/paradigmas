@@ -47,9 +47,9 @@ namespace Game
             //MusicController musicController = new MusicController();
             GenerarSpawnPoints();
             _player1 = new Player();
+            controlManager = new ControlManager();
             HUDManager = new HUDManager(_player1,gameManager);
             enemyManager.GetPlayer(_player1);
-            controlManager = new ControlManager();
             gameManager.SetPlayer(ref _player1);
             //_player1.OnListChange += (List<Bullet> bullets) => enemyManager.bulletsList = bullets; 
             
@@ -75,6 +75,7 @@ namespace Game
         {
             return _player1;
         }
+       
         private static void CalcularDeltaTime()
         {
             var currentTime = (float)(DateTime.Now - startTime).TotalSeconds;

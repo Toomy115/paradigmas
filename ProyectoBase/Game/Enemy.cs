@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    public abstract class Enemy : Actor
-    {    
-       // protected EnemyMovmentController movmentController;
+    public abstract class Enemy : Actor, IDamageable
+    {
+        // protected EnemyMovmentController movmentController;
+        protected int _points;
+        public int Points => _points;
         protected Player _player;
         protected string _texturePath = "Textures/Enemies/";
         protected int _enemyType;
@@ -17,8 +19,6 @@ namespace Game
         protected float timeToShoot;
         protected int _spawnNum;
         protected BulletsPool<Bullet> bulletsPool;
-
-
         private Animador alien;
         //private Animador currentAnimation;
 
@@ -38,6 +38,11 @@ namespace Game
             bulletsPool = enemyBulletPool;
         }
 
+        public bool IsEnabled
+        {
+            get { return isEnabled; }
+            set { isEnabled = value; }
+        }
         public Vector2 GetSize
         {
             get { return _transform.Size; }
@@ -168,7 +173,7 @@ namespace Game
 
         public override void Kill()
         {
-            isEnabled = false;
+            IsEnabled = false;
         }
 
     }

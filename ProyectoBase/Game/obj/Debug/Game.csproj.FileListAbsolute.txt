@@ -107,16 +107,6 @@ C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game
 C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Music\Music.wav
 C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Objects\bullet.png
 C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Objects\NewBullet.png
-C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\Idle_01.png
-C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\ShootAnimation\Shoot_01.png
-C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\ShootAnimation\Shoot_02.png
-C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\ShootAnimation\Shoot_03.png
-C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\ShootAnimation\Shoot_04.png
-C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\ShootAnimation\Shoot_05.png
-C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\WalkAnimation\Walk_01.png
-C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\WalkAnimation\Walk_02.png
-C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\WalkAnimation\Walk_03.png
-C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\WalkAnimation\Walk_04.png
 C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Titles\Game_Over.png
 C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Titles\Level_Complete.png
 C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Titles\Main_Title.png
@@ -143,3 +133,51 @@ D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\HUD\Numbers\6.png
 D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\HUD\Numbers\7.png
 D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\HUD\Numbers\8.png
 D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\HUD\Numbers\9.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\HUD\Life Bar\Barra 20.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\HUD\Life Bar\Barra 40.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\HUD\Life Bar\Barra 60.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\HUD\Life Bar\Barra 80.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\HUD\Life Bar\Barra Llena.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\HUD\Life Stack\1.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\HUD\Life Stack\2.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\HUD\Life Stack\3.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\HUD\Numbers\0.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\HUD\Numbers\1.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\HUD\Numbers\2.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\HUD\Numbers\3.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\HUD\Numbers\4.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\HUD\Numbers\5.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\HUD\Numbers\6.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\HUD\Numbers\7.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\HUD\Numbers\8.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\HUD\Numbers\9.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\Idle_01_1.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\Idle_01_2.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\Idle_01_3.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\ShootAnimation\Shoot_01_1.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\ShootAnimation\Shoot_01_2.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\ShootAnimation\Shoot_01_3.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\ShootAnimation\Shoot_02_1.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\ShootAnimation\Shoot_02_2.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\ShootAnimation\Shoot_02_3.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\ShootAnimation\Shoot_03_1.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\ShootAnimation\Shoot_03_2.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\ShootAnimation\Shoot_03_3.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\ShootAnimation\Shoot_04_1.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\ShootAnimation\Shoot_04_2.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\ShootAnimation\Shoot_04_3.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\ShootAnimation\Shoot_05_1.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\ShootAnimation\Shoot_05_2.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\ShootAnimation\Shoot_05_3.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\WalkAnimation\Walk_01_1.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\WalkAnimation\Walk_01_2.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\WalkAnimation\Walk_01_3.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\WalkAnimation\Walk_02_1.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\WalkAnimation\Walk_02_2.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\WalkAnimation\Walk_02_3.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\WalkAnimation\Walk_03_1.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\WalkAnimation\Walk_03_2.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\WalkAnimation\Walk_03_3.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\WalkAnimation\Walk_04_1.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\WalkAnimation\Walk_04_2.png
+C:\Users\alu703.LABORATORIOS\Documents\GitHub\parad\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\WalkAnimation\Walk_04_3.png
