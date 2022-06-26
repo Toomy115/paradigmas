@@ -108,11 +108,13 @@ namespace Game
                     //_player.DeleteBullet(_bulletPosition);
                     //_player.bullets.RemoveAt(_bulletPosition);
                     _player.bullets[_bulletPosition].isEnabled = false;
-
-                    Program.GetSpawnList[enemies[i].GetSpawnNum-1].InUse = false;
-                    enemies.RemoveAt(i);
-                    GameManager.Instance.EnemiesDestroyedUpgrade = 1;
-                    Console.WriteLine("Enemigos Destruidos: " + GameManager.Instance.GetEnemiesDestroyed);
+                    if (_player.bullets[_bulletPosition].GetColor == enemies[i].GetColor)
+                    {
+                        Program.GetSpawnList[enemies[i].GetSpawnNum - 1].InUse = false;
+                        enemies.RemoveAt(i);
+                        GameManager.Instance.EnemiesDestroyedUpgrade = 1;
+                        Console.WriteLine("Enemigos Destruidos: " + GameManager.Instance.GetEnemiesDestroyed);
+                    }
                 }
             }
         }

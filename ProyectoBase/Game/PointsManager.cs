@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    class PointsManager
+    public class PointsManager
     {
         private Transform transformNumber1 = new Transform();
         private Transform transformNumber2 = new Transform();
@@ -42,7 +42,7 @@ namespace Game
             }
         }
 
-        private string ChangeTexture(string path, string number)
+        public string ChangeTexture(string path, string number)
         {           
             switch (number)
             {

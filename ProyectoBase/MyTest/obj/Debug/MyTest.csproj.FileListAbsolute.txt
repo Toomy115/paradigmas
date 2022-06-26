@@ -1,0 +1,90 @@
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\es\Microsoft.TestPlatform.AdapterUtilities.resources.dll
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\es\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Microsoft.TestPlatform.AdapterUtilities.dll
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Engine.dll
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Background\background.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Enemies\BlueAlien\Alien_1.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Enemies\BlueAlien\Alien_2.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Enemies\BlueAlien\Alien_3.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\HUD\Life Bar\Barra 20.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\HUD\Life Bar\Barra 40.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\HUD\Life Bar\Barra 60.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\HUD\Life Bar\Barra 80.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\HUD\Life Bar\Barra Llena.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\HUD\Life Stack\1.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\HUD\Life Stack\2.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\HUD\Life Stack\3.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\HUD\Numbers\0.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\HUD\Numbers\1.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\HUD\Numbers\2.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\HUD\Numbers\3.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\HUD\Numbers\4.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\HUD\Numbers\5.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\HUD\Numbers\6.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\HUD\Numbers\7.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\HUD\Numbers\8.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\HUD\Numbers\9.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Objects\Bullet_1.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Objects\Bullet_2.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Objects\Bullet_3.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Objects\Goo_Shoot.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Enemies\RedAlien\Alien_1.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Enemies\RedAlien\Alien_2.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Enemies\RedAlien\Alien_3.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Enemies\YellowAlien\Alien_1.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Enemies\YellowAlien\Alien_2.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Enemies\YellowAlien\Alien_3.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Music\Music.wav
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\Idle_01_1.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\Idle_01_2.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\Idle_01_3.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\ShootAnimation\Shoot_01_1.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\ShootAnimation\Shoot_01_2.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\ShootAnimation\Shoot_01_3.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\ShootAnimation\Shoot_02_1.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\ShootAnimation\Shoot_02_2.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\ShootAnimation\Shoot_02_3.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\ShootAnimation\Shoot_03_1.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\ShootAnimation\Shoot_03_2.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\ShootAnimation\Shoot_03_3.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\ShootAnimation\Shoot_04_1.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\ShootAnimation\Shoot_04_2.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\ShootAnimation\Shoot_04_3.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\ShootAnimation\Shoot_05_1.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\ShootAnimation\Shoot_05_2.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\ShootAnimation\Shoot_05_3.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\WalkAnimation\Walk_01_1.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\WalkAnimation\Walk_01_2.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\WalkAnimation\Walk_01_3.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\WalkAnimation\Walk_02_1.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\WalkAnimation\Walk_02_2.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\WalkAnimation\Walk_02_3.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\WalkAnimation\Walk_03_1.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\WalkAnimation\Walk_03_2.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\WalkAnimation\Walk_03_3.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\WalkAnimation\Walk_04_1.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\WalkAnimation\Walk_04_2.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Player\WalkAnimation\Walk_04_3.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Titles\Game_Over.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Titles\Level_Complete.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Textures\Titles\Main_Title.png
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\MyTest.dll
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\MyTest.pdb
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Game.exe
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Game.pdb
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+D:\GitHub\paradigmas\ProyectoBase\MyTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\GitHub\paradigmas\ProyectoBase\MyTest\obj\Debug\MyTest.csproj.AssemblyReference.cache
+D:\GitHub\paradigmas\ProyectoBase\MyTest\obj\Debug\MyTest.csproj.CoreCompileInputs.cache
+D:\GitHub\paradigmas\ProyectoBase\MyTest\obj\Debug\MyTest.csproj.CopyComplete
+D:\GitHub\paradigmas\ProyectoBase\MyTest\obj\Debug\MyTest.dll
+D:\GitHub\paradigmas\ProyectoBase\MyTest\obj\Debug\MyTest.pdb

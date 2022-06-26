@@ -22,7 +22,7 @@ namespace Game
         private int numInList;
         private Collider collider;
         private string _texturePath = "Textures/Objects/";
-        private string _textureFilePlayer = "NewBullet.png";
+        private string _textureFilePlayer = "Bullet_";
         private string _textureFileEnemy = "Goo_Shoot.png";
         private string _texture;
         public bool isEnabled = true;
@@ -40,6 +40,11 @@ namespace Game
         private int SetColor
         {
             set { _numColor = value; }
+        }
+
+        public int GetColor
+        {
+            get { return _numColor; }
         }
         public Vector2 GetSize
         {
@@ -68,7 +73,8 @@ namespace Game
             if (isPlayerType)
             {
                 _texture = _texturePath + _textureFilePlayer;
-                playerType = true;
+                playerType = true;                               
+                //_numColor = numColor;
             }
             else
             {
@@ -113,6 +119,26 @@ namespace Game
             Engine.Draw(_texture, _transform.Position.X, _transform.Position.Y, _transform.Scale.X, _transform.Scale.Y,0,0,0);
         }
 
+        public void ChangeTextureColor(int num)
+        {
+            switch (num)
+            {
+                case 1:
+                    _textureFilePlayer += "1.png";
+                    break;
+                case 2:
+                    _textureFilePlayer += "2.png";
+                    break;
+                case 3:
+                    _textureFilePlayer += "3.png";
+                    break;
+                default:
+                    _textureFilePlayer += "1.png";
+                    break;
+            }
+            _texture = _texturePath + _textureFilePlayer;
+            _numColor = num;
+        }
         public void Destroy()
         { 
             isEnabled = false;

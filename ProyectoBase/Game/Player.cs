@@ -39,10 +39,11 @@ namespace Game
             base._transform.Size = new Vector2(59.5f, 182);
             base._transform.Scale = new Vector2(1.75f, 1.75f);           
             base._shootPoint = new Vector2();
-            base._speed = 200;
+            base._speed = 250;
             base._transform.Position = _initialPosition;
-            _currentColor = 1;
+            Color = 1;
             CreateAnimations();
+            ChangeColor(3);
             base._collider = new Collider(_transform.Size, _transform.Position);
             currentAnimation = idle1;
             _weapon = new Weapon();
@@ -208,6 +209,7 @@ namespace Game
             Bullet bullet = bulletsPool.GetElement(); // new Bullet(_shootPoint, 10, 0,bullets.Count(),true);
             bullet.SetPosition = _shootPoint;
             bullet.SetNumList = bullets.Count();
+            bullet.ChangeTextureColor(_currentColor);
             bullets.Add(bullet);
            // Console.WriteLine("Bullets en pool: " + bulletsPool.);
             //OnListChange.Invoke(bullets);

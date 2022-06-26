@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Game
 {
     public class Collider
@@ -27,7 +28,7 @@ namespace Game
         }
 
         public bool IsBoxColliding(Vector2 positionA, Vector2 sizeA, Vector2 positionB, Vector2 sizeB)
-        {
+        {            
             if (isEnabled)
             {
                 Vector2 distance = new Vector2(Math.Abs(positionA.X - positionB.X), Math.Abs(positionA.Y - positionB.Y));

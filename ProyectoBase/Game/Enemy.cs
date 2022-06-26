@@ -90,6 +90,10 @@ namespace Game
         {
             get { return base._collider; }
         }
+        public int GetColor
+        {
+            get { return _enemyType; }
+        }
         public override void Update()
         {
             if(currentTimeShoot >= timeToShoot)

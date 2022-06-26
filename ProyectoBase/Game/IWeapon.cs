@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Game
-{
-    interface IWeapon
-    {
-        int Color { get; set; }
+{    
+      interface IWeapon
+      {
+            int Color { get; set; }
 
-        void ChangeColor(int num);
-            
-    }
+            void ChangeColor(int num);
+
+      }
+    
 }

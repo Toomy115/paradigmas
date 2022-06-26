@@ -98,15 +98,15 @@ namespace Game
             {
                 player.SetAnimation = "idle";
             }
-            if (Engine.GetKey(Keys.Num1))
+            if (Engine.GetKey(Keys.NUMPAD1))
             {
                 player.ChangeColor(1);
             }
-            if (Engine.GetKey(Keys.Num2))
+            if (Engine.GetKey(Keys.NUMPAD2))
             {
                 player.ChangeColor(2);
             }
-            if (Engine.GetKey(Keys.Num3))
+            if (Engine.GetKey(Keys.NUMPAD3))
             {
                 player.ChangeColor(3);
             }

@@ -10,7 +10,12 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Archivos varios",
       "ColorIndex": -1
+    },
+    "08168980-ccc4-4585-9c6c-40c3c2ad2d8b": {
+      "ProjectGuid": "08168980-ccc4-4585-9c6c-40c3c2ad2d8b",
+      "DisplayName": "MyTest",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }
