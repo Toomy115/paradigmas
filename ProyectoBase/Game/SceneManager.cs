@@ -10,7 +10,10 @@ namespace Game
     {
         private static readonly SceneManager instance = new SceneManager();
         private int _currentScene = 0;
-
+        private float _currentTime = 0;
+        private float _timeToDesappear = 0.6f;
+        private float _timeToAppear = 0.4f;
+        private bool _drawButton;
         public static SceneManager Instance
         {
             get
@@ -33,7 +36,8 @@ namespace Game
             switch (_currentScene)
             {
                 case 0: //MENU PRINCIPAL
-                    Draw("Textures/Titles/Main_Title.png");
+                    Draw("Textures/Titles/Main_Title2.png");
+                    DrawButtonSpace();
                     if (Engine.GetKey(Keys.SPACE))
                     {
                         _currentScene = 1;
@@ -47,7 +51,8 @@ namespace Game
                     }*/
                     break;
                 case 2://VICTORY                    
-                    Draw("Textures/Titles/Level_Complete.png");
+                    Draw("Textures/Titles/Level_Complete2.png");
+                    DrawButtonSpace();
                     if (Engine.GetKey(Keys.SPACE))
                     {
                         //_enemiesDestroyed = 0;
@@ -56,7 +61,8 @@ namespace Game
                     }
                     break;
                 case 3:
-                    Draw("Textures/Titles/Game_Over.png");
+                    Draw("Textures/Titles/Game_Over2.png");
+                    DrawButtonSpace();
                     if (Engine.GetKey(Keys.SPACE))
                     {
                         //_enemiesDestroyed = 0;
@@ -66,6 +72,7 @@ namespace Game
                     break;
                 default:
                     Draw("Textures/Titles/Main_Title.png");
+                    DrawButtonSpace();
                     if (Engine.GetKey(Keys.SPACE))
                     {
                         _currentScene = 1;
@@ -75,10 +82,36 @@ namespace Game
             
         }
 
+        
+        private void DrawButtonSpace()
+        {
+            _currentTime += Program.GetDeltaTime;
+            if (_drawButton)
+            {
+                if (_currentTime >= _timeToDesappear)
+                {
+                    _drawButton = false;
+                    _currentTime = 0;
+                }
+            }
+            else
+            {
+                if(_currentTime >= _timeToAppear)
+                {
+                    _drawButton = true;
+                    _currentTime = 0;
+                }
+            }
+        }
+
         private void Draw(string path)
         {
             Engine.Clear();
             Engine.Draw("Textures/Background/background.png", 0, 0, 1f, 1f);
+            if(_drawButton)
+            {
+                Engine.Draw("Textures/Titles/Press Space2.png", 0, 0, 1f, 1f);               
+            }
             Engine.Draw(path, 0, 0, 1f, 1f);
             Engine.Show();
         }

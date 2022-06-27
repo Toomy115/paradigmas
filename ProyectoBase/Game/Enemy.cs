@@ -14,19 +14,32 @@ namespace Game
         protected Player _player;
         protected string _texturePath = "Textures/Enemies/";
         protected int _enemyType;
-        protected bool isEnabled;
+        protected bool isEnabled = true;
         protected float currentTimeShoot=0;
         protected float timeToShoot;
         protected int _spawnNum;
+        private Vector2 _offsetNormal = new Vector2(30, 62);
+        private Vector2 _offsetThunder = new Vector2(20, 1300);
+        private Vector2 _offset;
+        private Vector2 _normalScale = new Vector2(2, 2);
+        private Vector2 _thunderScale = new Vector2(1.2f, 2);
         protected BulletsPool<Bullet> bulletsPool;
         private Animador alien;
+        private Animador normalAlien;
+        private Animador explotion;
+        private Animador thunder;
+        protected bool _inExplotion = false;
+        protected bool _inThunder = false;        
+        private int _maxExplotionTexture = 7;
+        private int _maxThunderTexture = 3;
         //private Animador currentAnimation;
 
         public Enemy(int type, float posX, float posY,ref Player player, int spawnNum,BulletsPool<Bullet> enemyBulletPool)
         {
+            _inThunder = true;
             base._initialPosition = new Vector2(posX, posY);
             base._transform.Position = new Vector2(posX, posY);
-            base._transform.Scale = new Vector2(2, 2);
+            base._transform.Scale = _thunderScale;
             base._transform.Size = new Vector2(86, 124);
             base._collider = new Collider(_transform.Size,_transform.Position);
             Random random = new Random();
@@ -118,14 +131,38 @@ namespace Game
             base._collider.UpdatePosition(_transform.Position);
         }
 
-        public override void Draw()
+        protected void Update2()
         {
-            
-            Engine.Draw(alien.CurrentTexture, _transform.Position.X, _transform.Position.Y, _transform.Scale.X, _transform.Scale.Y, 0, 30, 62);
+            alien.Update();
+        }
 
-            for (int i = 0; i < bullets.Count; i++)
+        public override void Draw()
+        {           
+            Engine.Draw(alien.CurrentTexture, _transform.Position.X, _transform.Position.Y, _transform.Scale.X, _transform.Scale.Y, 0, _offset.X, _offset.Y);
+            if(!_inExplotion && !_inThunder)
             {
-                bullets[i].Draw();
+                for (int i = 0; i < bullets.Count; i++)
+                {
+                    bullets[i].Draw();
+                }
+            }
+            else
+            {
+                if(_inThunder)
+                {
+                    if(alien.CurrentFrame >= _maxThunderTexture)
+                    {
+                        _inThunder = false;
+                        alien.CurrentFrame = 0;
+                        alien = normalAlien;
+                        _offset = _offsetNormal;
+                        _transform.Scale = _normalScale;
+                    }
+                }
+                else if(alien.CurrentFrame >= _maxExplotionTexture)
+                {
+                    IsEnabled = false;
+                }
             }
         }
         public void Shoot()
@@ -147,23 +184,6 @@ namespace Game
 
         protected void CreateAnimations(string color)
         {
-            //string color;
-            //switch (_enemyType)
-            //{
-            //    case 1:
-            //        color = "BlueAlien";
-            //        break;
-            //    case 2:
-            //        color = "RedAlien";
-            //        break;
-            //    case 3:
-            //        color = "YellowAlien";
-            //        break;
-            //    default:
-            //        color = "BlueAlien";
-            //        break;
-            //}
-
             var alienTextures = new List<Texture>();
 
             for (int i = 1; i <= 3; i++)
@@ -172,12 +192,38 @@ namespace Game
                 alienTextures.Add(texture);
             }
 
-            alien = new Animador("alien", 0.2f, alienTextures, true);
+            normalAlien = new Animador("alien", 0.2f, alienTextures, true);
+
+            var explotionTextures = new List<Texture>();
+            for (int i = 1; i <= 8; i++)
+            {
+                var texture = Engine.GetTexture(_texturePath + $"Explotion/Capa {i}.png");
+                explotionTextures.Add(texture);
+            }
+
+            explotion = new Animador("explotion", 0.09f, explotionTextures, false);
+
+            var thunderTextures = new List<Texture>();
+            for (int i = 1; i <= 4; i++)
+            {
+                var texture = Engine.GetTexture(_texturePath + $"Thunder/Capa {i}.png");
+                thunderTextures.Add(texture);
+            }
+
+            thunder = new Animador("thunder", 0.1f, thunderTextures, false);
+
+            alien = thunder;
+            _offset = _offsetThunder;
         }
 
         public override void Kill()
         {
-            IsEnabled = false;
+            alien = explotion;
+            _transform.Scale = new Vector2(1, 1);
+            _inExplotion = true;
+            _collider.Activated = false;
+            alien.CurrentFrame = 0;
+            //IsEnabled = false;
         }
 
     }

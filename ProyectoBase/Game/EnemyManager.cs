@@ -54,10 +54,11 @@ namespace Game
                 }                
             }
 
+            CheckAlienKilled();
+
             for (int i = 0; i < enemies.Count; i++)
             {
-                enemies[i].Update();
-                
+                enemies[i].Update();               
             }
         }
 
@@ -70,8 +71,6 @@ namespace Game
         {
             _player = player;
         }
-
-
 
         private int SetSpawnPosition()
         {
@@ -110,13 +109,29 @@ namespace Game
                     _player.bullets[_bulletPosition].isEnabled = false;
                     if (_player.bullets[_bulletPosition].GetColor == enemies[i].GetColor)
                     {
-                        Program.GetSpawnList[enemies[i].GetSpawnNum - 1].InUse = false;
+                        enemies[i].Kill();
+                        /*Program.GetSpawnList[enemies[i].GetSpawnNum - 1].InUse = false;
                         enemies.RemoveAt(i);
                         GameManager.Instance.EnemiesDestroyedUpgrade = 1;
-                        Console.WriteLine("Enemigos Destruidos: " + GameManager.Instance.GetEnemiesDestroyed);
+                        Console.WriteLine("Enemigos Destruidos: " + GameManager.Instance.GetEnemiesDestroyed);*/
                     }
                 }
             }
+        }
+
+        private void CheckAlienKilled()
+        {
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                if (enemies[i].IsEnabled == false)
+                {
+                    Program.GetSpawnList[enemies[i].GetSpawnNum - 1].InUse = false;
+                    enemies.RemoveAt(i);
+                    GameManager.Instance.EnemiesDestroyedUpgrade = 1;
+                    Console.WriteLine("Enemigos Destruidos: " + GameManager.Instance.GetEnemiesDestroyed);
+                }
+            }
+        
         }
         public void Draw()
         {

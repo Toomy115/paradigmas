@@ -19,8 +19,15 @@ namespace Game
 
         public override void Update()
         {
-            base.Update();
-            Movment();
+            if (!_inExplotion && !_inThunder)
+            {
+                base.Update();
+                Movment();
+            }
+            else
+            {
+                base.Update2();
+            }
         }
         private void Movment()
         {

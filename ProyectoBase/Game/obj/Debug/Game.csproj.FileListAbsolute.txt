@@ -69,9 +69,6 @@ D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\YellowAlien\Al
 D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\YellowAlien\Alien_2.png
 D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\YellowAlien\Alien_3.png
 D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Music\Music.wav
-D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Titles\Game_Over.png
-D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Titles\Level_Complete.png
-D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Titles\Main_Title.png
 D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Game.exe
 D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Game.pdb
 D:\GitHub\paradigmas\ProyectoBase\Game\obj\Debug\Game.csproj.AssemblyReference.cache
@@ -202,3 +199,19 @@ D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Player\WalkAnimation\W
 D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Objects\Bullet_1.png
 D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Objects\Bullet_2.png
 D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Objects\Bullet_3.png
+D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\Explotion\Capa 1.png
+D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\Explotion\Capa 2.png
+D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\Explotion\Capa 3.png
+D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\Explotion\Capa 4.png
+D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\Explotion\Capa 5.png
+D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\Explotion\Capa 6.png
+D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\Explotion\Capa 7.png
+D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\Explotion\Capa 8.png
+D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Titles\Game_Over2.png
+D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Titles\Level_Complete2.png
+D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Titles\Main_Title2.png
+D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\Thunder\Capa 1.png
+D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\Thunder\Capa 2.png
+D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\Thunder\Capa 3.png
+D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\Thunder\Capa 4.png
+D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Titles\Press Space2.png

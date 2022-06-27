@@ -28,6 +28,12 @@ namespace Game
             }
         }       
 
+        public int CurrentFrame
+        {
+            get { return currentFrame; }
+            set { currentFrame = value; }
+        }
+
         public void Update()
         {
             currentTime += Program.GetDeltaTime;
