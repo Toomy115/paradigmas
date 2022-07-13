@@ -58,7 +58,6 @@ C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\D
 C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Titles\Level_Complete.png
 C:\Users\alu703.LABORATORIOS\Documents\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Titles\Main_Title.png
 D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Engine.dll
-D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Background\background.png
 D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\BlueAlien\Alien_1.png
 D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\BlueAlien\Alien_2.png
 D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\BlueAlien\Alien_3.png
@@ -215,3 +214,10 @@ D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\Thunder\Capa 2
 D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\Thunder\Capa 3.png
 D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Enemies\Thunder\Capa 4.png
 D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Titles\Press Space2.png
+D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Background\Background_1.png
+D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Background\Background_2.png
+D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Background\Background_3.png
+D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Background\Background_4.png
+D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Objects\Power_Up_1.png
+D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Objects\Power_Up_2.png
+D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Objects\Power_Up_3.png

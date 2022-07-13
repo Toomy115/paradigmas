@@ -61,6 +61,11 @@
     <Compile Include="MusicController.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PointsManager.cs" />
+    <Compile Include="PowerUp.cs" />
+    <Compile Include="PowerUpHealth.cs" />
+    <Compile Include="PowerUpLife.cs" />
+    <Compile Include="PowerUpManager.cs" />
+    <Compile Include="PowerUpSpeed.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="RedAlien.cs" />
     <Compile Include="Renderer.cs" />
@@ -75,7 +80,16 @@
     <Content Include="Engine.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Textures\Background\background.png">
+    <Content Include="Textures\Background\Background_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Background\Background_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Background\Background_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Background\Background_4.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Textures\Enemies\BlueAlien\Alien_1.png">
@@ -208,6 +222,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Textures\Music\Music.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Objects\Power_Up_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Objects\Power_Up_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Objects\Power_Up_3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Textures\Player\Idle_01_1.png">

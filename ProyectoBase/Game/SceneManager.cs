@@ -14,6 +14,14 @@ namespace Game
         private float _timeToDesappear = 0.6f;
         private float _timeToAppear = 0.4f;
         private bool _drawButton;
+        private string _pathBackground = "Textures/Background/Background_";
+        private int _numBackground = 0;
+        private string _completePath;
+
+        public SceneManager()
+        {
+            ChangeBackground();
+        }
         public static SceneManager Instance
         {
             get
@@ -29,6 +37,11 @@ namespace Game
         public int SetCurrentScene
         {
             set { _currentScene = value; }
+        }
+
+        public string GetPathBackground
+        {
+            get { return _completePath; }
         }
 
         public void Update()
@@ -57,6 +70,7 @@ namespace Game
                     {
                         //_enemiesDestroyed = 0;
                         //_enemiesToDestroy += _enemiesNextLevel;
+                        ChangeBackground();
                         _currentScene = 1;
                     }
                     break;
@@ -82,6 +96,15 @@ namespace Game
             
         }
 
+        private void ChangeBackground()
+        {
+            _numBackground++;
+            if(_numBackground == 5)
+            {
+                _numBackground = 1;
+            }
+            _completePath = _pathBackground + _numBackground + ".png";
+        }
         
         private void DrawButtonSpace()
         {
@@ -107,7 +130,7 @@ namespace Game
         private void Draw(string path)
         {
             Engine.Clear();
-            Engine.Draw("Textures/Background/background.png", 0, 0, 1f, 1f);
+            Engine.Draw(_completePath, 0, 0, 1f, 1f);
             if(_drawButton)
             {
                 Engine.Draw("Textures/Titles/Press Space2.png", 0, 0, 1f, 1f);               

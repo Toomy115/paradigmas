@@ -107,6 +107,11 @@ namespace Game
         {
             get { return _enemyType; }
         }
+
+        public Transform GetTransform
+        {
+            get { return _transform; }
+        }
         public override void Update()
         {
             if(currentTimeShoot >= timeToShoot)

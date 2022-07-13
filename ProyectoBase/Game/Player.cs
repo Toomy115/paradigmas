@@ -86,7 +86,16 @@ namespace Game
         //{
         //    set { bullets.RemoveAt(value); }
         //}
+        
+        public Vector2 GetPosition
+        {
+            get { return base._transform.Position; }
+        }
 
+        public Vector2 GetSize
+        {
+            get { return base._transform.Size; }
+        }
 
         public string SetAnimation
         {
@@ -151,8 +160,28 @@ namespace Game
             }
             currentAnimation.Update();
             _collider.UpdatePosition(_transform.Position);
-        }      
+        }
 
+        public void GetLifeStock()
+        {
+            _lifeStack++;
+            if (_lifeStack > 3)
+                _lifeStack = 3;
+            OnLifeStackChange(_lifeStack);
+        }
+        public void GetHealth()
+        {
+            _health += 20;
+            if(_health > 100)
+                _health = 100;
+            OnHealthChange(_health);
+        }
+        public void GetFaster()
+        {
+            _speed += 20;
+            if (_speed > 310)
+                _speed = 310;
+        }
         public void GetDamage(int damage)
         {
             _health -= damage;
@@ -166,6 +195,7 @@ namespace Game
 
         public override void Kill()
         {
+            _speed = 250;
             _lifeStack--;
             OnLifeStackChange(_lifeStack);
             if (_lifeStack == 0)
@@ -237,8 +267,7 @@ namespace Game
 
         public void ChangeColor(int color)
         {
-            Color = color;
-            Console.WriteLine("Color:" + color);
+            Color = color;           
         }
         private void CreateAnimations()
         {

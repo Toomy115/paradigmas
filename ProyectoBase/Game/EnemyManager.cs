@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Game
 {
+    public delegate void EnemyKilledEventHandler(Transform transform);
     public class EnemyManager
     {
+        public event EnemyKilledEventHandler OnEnemyKill;
         private static readonly EnemyManager instance = new EnemyManager();
         private List<Enemy> enemies = new List<Enemy>();
         private Vector2 spawnPoint = new Vector2();
@@ -126,6 +128,7 @@ namespace Game
                 if (enemies[i].IsEnabled == false)
                 {
                     Program.GetSpawnList[enemies[i].GetSpawnNum - 1].InUse = false;
+                    OnEnemyKill(enemies[i].GetTransform);
                     enemies.RemoveAt(i);
                     GameManager.Instance.EnemiesDestroyedUpgrade = 1;
                     Console.WriteLine("Enemigos Destruidos: " + GameManager.Instance.GetEnemiesDestroyed);

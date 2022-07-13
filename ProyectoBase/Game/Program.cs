@@ -14,6 +14,7 @@ namespace Game
         private static SceneManager sceneManager;
         private static GameManager gameManager;
         private static HUDManager HUDManager;
+        private static PowerUpManager powerUpManager;
         private static List<SpawnController> spawns;
 
 
@@ -43,10 +44,12 @@ namespace Game
             sceneManager = SceneManager.Instance;
             enemyManager = EnemyManager.Instance;
             gameManager = GameManager.Instance;
-            startTime = DateTime.Now;          
+            startTime = DateTime.Now;
             //MusicController musicController = new MusicController();
             GenerarSpawnPoints();
             _player1 = new Player();
+            powerUpManager = new PowerUpManager(_player1);
+            enemyManager.OnEnemyKill += new EnemyKilledEventHandler(powerUpManager.CalculateDrop);
             controlManager = new ControlManager();
             HUDManager = new HUDManager(_player1,gameManager);
             enemyManager.GetPlayer(_player1);
@@ -69,6 +72,7 @@ namespace Game
         {
             sceneManager.Update();
             gameManager.Update();
+            powerUpManager.Update();
         }
 
         public static Player ObtenerJugador()
@@ -100,9 +104,10 @@ namespace Game
         private static void Draw()
         {
             Engine.Clear();
-            Engine.Draw("Textures/Background/background.png", 0, 0, 1f, 1f);
+            Engine.Draw(sceneManager.GetPathBackground, 0, 0, 1f, 1f);
             _player1.Draw();
             enemyManager.Draw();
+            powerUpManager.Draw();
             HUDManager.Draw();
             Engine.Show();
         }
