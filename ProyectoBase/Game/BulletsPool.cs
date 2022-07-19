@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    public class BulletsPool< T>
+    public class BulletsPool<T>
     {
         private Queue<T> _elements;
         private Func<T> _elementGenerator;

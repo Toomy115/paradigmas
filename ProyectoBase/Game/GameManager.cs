@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 namespace Game
 {
     public delegate void PointsChangeEventHandler(int points);
+    public delegate void VictoryEventHandler();
     public class GameManager
     {
         public event PointsChangeEventHandler OnPointsChange;
+        public event VictoryEventHandler OnVictory;
         private static readonly GameManager instance = new GameManager();
         private float _enemiesToDestroy = 10;
         private float _enemiesNextLevel = 5;
@@ -51,6 +53,7 @@ namespace Game
                 _enemiesDestroyed = 0;               
                 SceneManager.Instance.SetCurrentScene = 2;
                 _player.RestoreNextLevel();
+                OnVictory();
             }
 
         }

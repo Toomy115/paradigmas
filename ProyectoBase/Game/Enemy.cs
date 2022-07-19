@@ -18,6 +18,7 @@ namespace Game
         protected float currentTimeShoot=0;
         protected float timeToShoot;
         protected int _spawnNum;
+        protected int _maxSpeed = 350;
         private Vector2 _offsetNormal = new Vector2(30, 62);
         private Vector2 _offsetThunder = new Vector2(20, 1300);
         private Vector2 _offset;
@@ -34,7 +35,7 @@ namespace Game
         private int _maxThunderTexture = 3;
         //private Animador currentAnimation;
 
-        public Enemy(int type, float posX, float posY,ref Player player, int spawnNum,BulletsPool<Bullet> enemyBulletPool)
+        public Enemy(int type, float posX, float posY,ref Player player, int spawnNum, int speed, BulletsPool<Bullet> enemyBulletPool)
         {
             _inThunder = true;
             base._initialPosition = new Vector2(posX, posY);
@@ -42,8 +43,10 @@ namespace Game
             base._transform.Scale = _thunderScale;
             base._transform.Size = new Vector2(86, 124);
             base._collider = new Collider(_transform.Size,_transform.Position);
+            base._collider.Activated = false;
+            base._speed = speed;
             Random random = new Random();
-            timeToShoot = random.Next(200, 600);           
+            timeToShoot = random.Next(300, 600);           
             _enemyType = type;
             _player = player;
             Console.WriteLine("enemy tipe" + type);            
@@ -162,6 +165,7 @@ namespace Game
                         alien = normalAlien;
                         _offset = _offsetNormal;
                         _transform.Scale = _normalScale;
+                        base._collider.Activated = true;
                     }
                 }
                 else if(alien.CurrentFrame >= _maxExplotionTexture)

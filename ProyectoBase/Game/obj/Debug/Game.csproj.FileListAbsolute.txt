@@ -221,3 +221,7 @@ D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Background\Background_
 D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Objects\Power_Up_1.png
 D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Objects\Power_Up_2.png
 D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\Objects\Power_Up_3.png
+D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\HUD\Speed Indicator\Speed_Level_0.png
+D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\HUD\Speed Indicator\Speed_Level_1.png
+D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\HUD\Speed Indicator\Speed_Level_2.png
+D:\GitHub\paradigmas\ProyectoBase\Game\bin\Debug\Textures\HUD\Speed Indicator\Speed_Level_3.png

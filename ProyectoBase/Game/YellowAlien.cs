@@ -11,9 +11,8 @@ namespace Game
         private float _maxRangeY = 100;
         private float _minRangeY = 500;
         private int _direccion = 1;
-        public YellowAlien(int type, float posX, float posY, ref Player player, int spawnNum, BulletsPool<Bullet> enemyBulletPool) : base(type, posX, posY, ref player, spawnNum,enemyBulletPool)
+        public YellowAlien(int type, float posX, float posY, ref Player player, int spawnNum, int speed, BulletsPool<Bullet> enemyBulletPool) : base(type, posX, posY, ref player, spawnNum,speed,enemyBulletPool)
         {
-            base.ChangeSpeed = 100;
             base.CreateAnimations("YellowAlien");
         }
 

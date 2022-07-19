@@ -8,11 +8,13 @@ namespace Game
 {
     public delegate void HealthChangeEventHandler(float health);
     public delegate void LifeStackChangeEventHandler(int stack);
+    public delegate void SpeedChangeEventHandler(int speed);
     public class Player : Actor, IColoring
     {
         // public event Action<List<Bullet>> OnListChange;
         public event HealthChangeEventHandler OnHealthChange;
         public event LifeStackChangeEventHandler OnLifeStackChange;
+        public event SpeedChangeEventHandler OnSpeedChange;
         private float _health;
         private int _lifeStack = 3;  
         private Bullet _enemyBullet;
@@ -29,6 +31,7 @@ namespace Game
         private Animador currentAnimation;
         private Weapon _weapon;
         private int _currentColor;
+        private int _numSpeed = 0;
         private BulletsPool<Bullet> bulletsPool = new BulletsPool<Bullet>(createBullet);
 
         public Player ()
@@ -179,8 +182,16 @@ namespace Game
         public void GetFaster()
         {
             _speed += 20;
+            _numSpeed++;
             if (_speed > 310)
+            {
                 _speed = 310;
+                _numSpeed = 3;
+            }
+            else
+            {
+                OnSpeedChange(_numSpeed);
+            }
         }
         public void GetDamage(int damage)
         {
@@ -196,6 +207,8 @@ namespace Game
         public override void Kill()
         {
             _speed = 250;
+            _numSpeed = 0;
+            OnSpeedChange(0);
             _lifeStack--;
             OnLifeStackChange(_lifeStack);
             if (_lifeStack == 0)
@@ -276,14 +289,12 @@ namespace Game
                 var idleTexture = new List<Texture>();
                 idleTexture.Add(Engine.GetTexture("Textures/Player/Idle_01_" + _currentColor + ".png"));
 
-
                 var walkTextures = new List<Texture>();
                 for (int i = 1; i <= 4; i++)
                 {
                     var texture = Engine.GetTexture($"Textures/Player/WalkAnimation/Walk_0{i}_" + _currentColor + ".png");
                     walkTextures.Add(texture);
                 }
-
 
                 var shootTextures = new List<Texture>();
                 for (int i = 1; i <= 5; i++)
@@ -315,5 +326,4 @@ namespace Game
             }
         }
     }
-
 }

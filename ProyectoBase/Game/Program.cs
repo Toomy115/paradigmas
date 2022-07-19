@@ -45,12 +45,13 @@ namespace Game
             enemyManager = EnemyManager.Instance;
             gameManager = GameManager.Instance;
             startTime = DateTime.Now;
-            //MusicController musicController = new MusicController();
+            MusicController musicController = new MusicController();
             GenerarSpawnPoints();
             _player1 = new Player();
             powerUpManager = new PowerUpManager(_player1);
             enemyManager.OnEnemyKill += new EnemyKilledEventHandler(powerUpManager.CalculateDrop);
             controlManager = new ControlManager();
+            gameManager.OnVictory += new VictoryEventHandler(enemyManager.AddSpeed);
             HUDManager = new HUDManager(_player1,gameManager);
             enemyManager.GetPlayer(_player1);
             gameManager.SetPlayer(ref _player1);

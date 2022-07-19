@@ -14,7 +14,7 @@ namespace Game
         private List<Enemy> enemies = new List<Enemy>();
         private Vector2 spawnPoint = new Vector2();
         //public List<Bullet> bulletsList = new List<Bullet>();
-     
+        private int velocidad = 100;
         private int maxEnemies = 3;
         private Player _player;
         //private Vector2 bulletPosition = new Vector2();
@@ -41,17 +41,17 @@ namespace Game
                 int color = random.Next(1, 4);              
                 if (color == 1)//azul
                 {
-                    var enemy = new BlueAlien(1, spawnPoint.X, spawnPoint.Y,ref _player, spawnNum,enemyBulletPool);
+                    var enemy = new BlueAlien(1, spawnPoint.X, spawnPoint.Y,ref _player, spawnNum, velocidad, enemyBulletPool);
                     enemies.Add(enemy);
                 }
                 else if (color == 2)//red
                 {
-                    var enemy = new RedAlien(2, spawnPoint.X, spawnPoint.Y, ref _player, spawnNum, enemyBulletPool);
+                    var enemy = new RedAlien(2, spawnPoint.X, spawnPoint.Y, ref _player, spawnNum, velocidad, enemyBulletPool);
                     enemies.Add(enemy);
                 }
                 else//yellow
                 {
-                    var enemy = new YellowAlien(3, spawnPoint.X, spawnPoint.Y, ref _player, spawnNum, enemyBulletPool);
+                    var enemy = new YellowAlien(3, spawnPoint.X, spawnPoint.Y, ref _player, spawnNum, velocidad, enemyBulletPool);
                     enemies.Add(enemy);
                 }                
             }
@@ -135,6 +135,11 @@ namespace Game
                 }
             }
         
+        }
+
+        public void AddSpeed()
+        {
+            velocidad += 20;
         }
         public void Draw()
         {

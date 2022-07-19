@@ -71,6 +71,7 @@
     <Compile Include="Renderer.cs" />
     <Compile Include="SceneManager.cs" />
     <Compile Include="SpawnController.cs" />
+    <Compile Include="SpeedIndicatorManager.cs" />
     <Compile Include="Transform.cs" />
     <Compile Include="Vector2.cs" />
     <Compile Include="Weapon.cs" />
@@ -189,6 +190,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Textures\HUD\Numbers\9.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\HUD\Speed Indicator\Speed_Level_0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\HUD\Speed Indicator\Speed_Level_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\HUD\Speed Indicator\Speed_Level_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\HUD\Speed Indicator\Speed_Level_3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Textures\Objects\Bullet_1.png">
